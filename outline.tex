@@ -14,7 +14,8 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage{graphicx}  %needed to include png, eps figures
 \usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
-
+\usepackage{amssymb}
+\usepackage{inputenc}
 \begin{document}
 
 % paper title
@@ -33,12 +34,11 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-  This study examines the robust stability of a power system, which is based on proportional-integral-derivative load
-frequency control and involves uncertain parameters and time delays. The model of the system is firstly established, following which
-the system is transformed into a closed-loop system with feedback control. On this basis, a new augmented Lyapunov-Krasovskii (LK)
-functional is established for using the new Bessel-Legendre inequality to estimate the derivative of the functional, which can provide
-a maximum lower bound. A stability criterion is then derived by employing the LK functional and Bessel-Legendre inequality. Finally,
-numerical examples are used to demonstrate the validity and superiority of the proposed method.
+  This technical report examines the robust stability of a power system, which is based on proportional-integral-derivative load
+frequency control and involves uncertain parameters and time delays. This report examines a power system model which  is transformed into a closed-loop system with feedback control. The purpose of this report is to verify new augmented Lyapunov-Krasovskii (LK)
+functional to employ the new Bessel-Legendre inequality. The new Bessel-Legendre inequality is used to estimate the derivative of the functional to obtain
+a maximum lower bound. This report also verifies and provides a detailed description of stability criterion of the power system obtained by employing the LK functional and Bessel-Legendre inequality. Finally,
+this report validates the proposed method by applying it to practical numerical examples.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -51,24 +51,14 @@ numerical examples are used to demonstrate the validity and superiority of the p
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
-\IEEEPARstart{W}{rite} why is important to do this experiment, what background is needed, what technology has been used in this session, you can also talk briefly about what other technology exist but was not used here.
-Then explain briefly how the experiment was conducted, what measurements were taken, what technology is used (acquisition system, sensors, software), if calculations were done, what calculations were done, what decisions were made, and what the final result was (explained in a concise way with words).
-Writing “good” reports requires much thought, organization and editing but the rewards are
-great. Those students who can master good technical writing skills will find greater success and
-opportunity as professionals in industry. \\
-You should become proficient at using your word processor for such items as page
-numbers, formatting tables, creating graphs, inserting Greek symbols, and using
-superscripts and subscripts.  \\
+\IEEEPARstart{W}{ith} the growing population, the demand for efficient power systems have increased drastically. Efficient power systems have the characteristics of high stability margin and less time delays. These characteristics are attainable if the operating frequency of the power system fluctuate within a small range of equilibrium value and the load frequency control (LFC) can control these fluctuations. During the process of data transmission, there is always a possiblity of occurance if time delays. These time delays occur randomly which makes it impossible to predict.  Therefore, gaining insights on robust stability of power systems with time delays and uncertain parameters can help to overcome this problem. \\
 
-Remember that once you graduate, industry will require you to write well. In some cases, you will be involved in writing proposals or possibly final design reports. It is possible that you will be required to assist in writing user or maintenance manuals. Certainly, you will always be required to write short reports and memos detailing your activities. It is our objective to train you to write well by the time you have graduated. An excellent style manual for science writers is [3]. \\
-You should become proficient at using the equation editor (Word has a built-in equation editor that can be accessed by “inserting object”. or you can use Latex editor). \\
+The most research methods employed in time-delay systems are based on the Lyapunov direct time-domain method. Through the construction of the Lyapunov-Krasovskii (LK) functional, the stability of the system is analyzed with the aid of the Lyapunov stability theory, after which the stability criterion is derived. Finally, the stability margin of the system is obtained by employing the linear matrix inequality (LMI) toolbox.This report aims to improve the upper bound of the time delay of the system by proposing an augmented LK functional and using the Bessel-Legendre inequality to estimate the derivative of the functional. This study assumes that the forward channel of the controller possesses time delays and the inertia time constant of both the prime mover and speed governor may have uncertain parameters in the system. A time-varying delay power system model is established with uncertain parameters based on proportional-integral-derivative (PID) load frequency control. An appropriate LK functional is constructed, and the robust stability of the system is then analyzed using the Lyapunov stability theory. Finally, the robust stability criterion of the system is obtained by employing the Bessel-Legendre inequality discussed in Ref. [9], and the stability margin that the system can withstand is solved using an LMI toolbox. The advantages and effectiveness of the proposed method are demonstrated by comparing the results of the proposed method with those of previous methods under the two controller gains.\\
 
-Normal text is to be single-spaced in 10-point Times or Times Roman (or similar font), with 12-point interline spacing, in the two-column 
-format. The first line of each paragraph is to be indented approximately 1/4 inch (approx. 0.7 cm), and the entire text is to be justified -- that is, flush left and flush right. Please do not place additional line spacing between paragraphs. Figure and table captions should be Helvetica 10-point boldface; callouts should be Helvetica 9-point 
-nonboldface.  \\
+The variables used in this study are defined as follows:
+ $R^n$ and $R^{n*m}$ denote n-dimensional vectors and $n * m$ dimensional matrices in the real number domain, respectively; $R^T$ and $R^-1$ represent the transpose and inverse of a matrix, respectively; I and 0 are identity and zero matrices, respectively;  P  should be greater than 0 means that the matrix P is symmetric and positive; $Sym{X}=X+X^T$; ‘*’ represents symmetric terms in a symmetric matrix; and diag(···) denotes a diagonal matrix. \\
 
-TITLE AND HEADINGS. The main title should be in Times (or Times Roman) 14-point boldface centered over both columns. In the main title, please initially capitalize nouns, pronouns, verbs, adjectives, and adverbs; do not capitalize articles, coordinate conjunctions, and prepositions (unless the title begins with such a word). Initially capitalize only the first word in first-, second-, and third-order headings. Leave two blank lines before author names(s)/affiliation(s).
-
+\newpage
 \section{Concepts Needed}
 \subsection{Legendre Polynomials}
 \subsection{Bessel}
