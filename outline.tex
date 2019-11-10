@@ -16,8 +16,9 @@
 \usepackage{float}  % used to fix location of images i.e.\begin{figure}[H]
 \usepackage{amssymb}
 \usepackage{inputenc}
-\begin{document}
+\usepackage[thinc]{esdiff}
 
+\begin{document}
 % paper title
 \title{Delay-dependent Robust Stability Analysis of Power Systems with PID Controller}
 
@@ -58,9 +59,93 @@ The most research methods employed in time-delay systems are based on the Lyapun
 The variables used in this study are defined as follows:
  $R^n$ and $R^{n*m}$ denote n-dimensional vectors and $n * m$ dimensional matrices in the real number domain, respectively; $R^T$ and $R^-1$ represent the transpose and inverse of a matrix, respectively; I and 0 are identity and zero matrices, respectively;  P  should be greater than 0 means that the matrix P is symmetric and positive; $Sym{X}=X+X^T$; ‘*’ represents symmetric terms in a symmetric matrix; and diag(···) denotes a diagonal matrix. \\
 
-\newpage
+
 \section{Concepts Needed}
+
 \subsection{Legendre Polynomials}
+A brief overview of Legendre polynomials obtained by solving Legendre
+ODE is provided below. \\ 
+
+Legendre ODE is given as follows
+ \begin{equation}
+  (1-x^2)\diff[2]{f}{x} - 2x\diff{f}{x} + k(k+1)y = 0 \\
+\end{equation} \\
+
+Solution to ODE is obtained as follows:
+
+Step 1: Convert Equation to the form shown below
+\begin{equation}
+\diff[2]{f}{x} + p(x)\diff{y}{x}  + q(x)y = G(x)
+\end{equation}
+
+Therefore we have,
+\begin{equation}
+     \diff[2]{f}{x} - \frac{2x}{1-x^2}\diff{f}{x} + \frac{k(k+1)}{1-x^2}y = 0
+\end{equation}
+
+
+Step 2: Use power series solution about $x_0 = 0$\\
+Therefore, 
+\begin{align}
+  Y(x) &= \sum_{n=0}{\infty}a_nx^n  \\
+  Y'(x) &= \sum_{\infty}{n=0}na_nx^{n-1} \\
+  Y''(x) &= \sum_{n=0}^{\infty}n(n-1)a_nx^(n-2)
+ \end{align}
+ 
+ Plug this back into the ODE to get the recurrence relation
+ below
+ \begin{equation}
+a_{n+2} = \frac{(n-k)(n+k+1)}{(n+2)(n+1)}
+\end{equation}
+
+Solving recurrence relation\\
+
+Odd Index solution
+\begin{align}
+    a_3 &= \frac{a_1(1-k)(2+k)}{3!} \\
+    a_5 &= \frac{a_1(k-3)(k-1)(k+2)(k+4)}{5!} \\
+\end{align}
+
+Polynomial Soln for k(even or odd)
+
+Set $a_k$ to calculate $a_{k-2},a_{k-4}$
+\begin{equation}
+a_n = \frac{(n-k)(n+k+1)}{(n+2)(n+1)} a_n 
+\end{equation}
+replace n by k-2
+\begin{align}
+  a_{k-2k}&= \frac{-1(k)(k-1)}{2(2k-1)} \\
+  a_k &= \frac{-1(2k-2)!}{2^k(k-1)!(k-2)!}
+\end{align}
+Similarly,
+\begin{equation}
+a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
+\end{equation}
+    Therefore the general formula
+
+    \begin{equation}
+    a_{k-2m} = \frac{-1^m(2k-m)!}{(m!)(2^k)(k-m)!(k-2m)!}
+  \end{equation}
+
+
+  
+    Therefore
+    \begin{equation}
+    P_k(x) = \sum_{m=0}^{k/2} 
+  \end{equation}
+
+   Properties \\
+    Legendre Polynomials are orthogonal
+    \begin{align}
+      %ie int_-1^1 P_{k_1}P_{k_2} &= 0 %for k_1 neq k_2
+    (2n-1)xP_(n-1)(x) = nP(x) + (n-1)P_(n-2)(s) n = 2, 3 ...
+  \end{align}
+
+    
+
+%\begin{equation}
+  %(1-x^2)
+%\end{equation}
 \subsection{Bessel}
 \subsection{Bessle Legendre Inequalities}
 \subsection{Lyapunov-Krasovskii Functional}
