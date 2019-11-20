@@ -4,7 +4,7 @@
 % *** CITATION PACKAGES ***
 \usepackage[style=ieee]{biblatex} 
 \bibliography{example_bib.bib}    %your file created using JabRef
-
+\usepackage {graphicx}
 % *** MATH PACKAGES ***
 \usepackage{amsmath}
 
@@ -148,58 +148,189 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
 %\end{equation}
 \subsection{Bessel}
 \subsection{Bessle Legendre Inequalities}
+ \begin{align}
+   \int_{-h}^{0}x(u)Rx(u)du \geq \frac{1}{h}
+   \begin{bmatrix}
+     \omega_0 \\
+     . \\
+     . \\
+     . \\
+     \omega_n
+   \end{bmatrix}
+   R_N
+   \begin{bmatrix}
+  \omega_0 \\
+  . \\
+  . \\
+  . \\
+  \omega_n
+\end{bmatrix}
+ \end{align}
+
+ where R is symmetric positive definite matrix
+ and 
+ \begin{align}
+   R_N &= diag(R,3R,...,(2N+1)R) \\
+   \omega_k&= \int_{-h}^{0}P_k(u)x(u)du, 
+ \end{align}
+ for all natural numbers k and x is a square integrable function
+ from an open interval,I to R^n 
 \subsection{Lyapunov-Krasovskii Functional}
 \subsection{Prime mover}
 \subsection{Speed governor}
 \section{System Model and Derivations}
-\section{Results}
-Show plots of any data collected and describe with words what your plots are showing. Describe the relationship between variables and time. Remember to number all your figures.  This is the most critical part affect the technical achievement.\\
-No picture, table, schematic, or graph should appear without a name (generally of the form Fig.1 o Table 1). %~\ref{fig:ecg} or Table~\ref{table:Exps}), 
-None should appear without a reference to them by name in the main body of the writing.
-All figures and tables must be discussed in the text, including what it is, significant observations, and analysis. \\
-Capitalize “Table” and “Fig.” any time they are accompanied by specific table or figure numbers. Examples: “The measured data are plotted in Fig. 2. The figure shows a linear relationship in....”. “The table shows …” vs. “The data of Table 3…” \\
 
-\begin{table}[!ht] %[H]
-\centering
-\label{table:Exps}
-\begin{tabular}{ll}
-Student &  Max Temperature \\ \hline
-aabbbccc &  $35^{\circ}$   \\
-eeeddd &   $54^{\circ}$ \\
-eeeddd &   $54^{\circ}$ \\
-\end{tabular}
-\caption{Temperature measurements performed for session 1.}
-\end{table}
+\begin{figure}
+\includegraphics[width=\linewidth]{systemmodel.png}
+  \caption{System}
+  \label{fig:System1}
+\end{figure}
+
+
+The system above controls the frequency of the load(LFC) to some desired output. \\
+
+Whenever there is a change in grid load, the system adjust the frequency for the new load by 
+doing the following.
+
+\begin{enumerate} 
+  \item Generator generates a new frequency 
+  \item Frequency deviation factor($\beta$) is used to get the error
+  \item Error is fed into PID to handle frequency variation
+  \item A control signal is generated to control the governor
+  \item Output is fed into Governor(acts as an actuator) to control valve
+  \item Valve is opened based on signal
+  \item Variation in valve opening causes a desired power change  
+ \end{enumerate} \\ \\
+From the figure above, the equations of motion can be represented as 
+
+
+\begin{align}
+  \diff{\Delta f}{t} &= \frac{-D}{M}\Delta f + \frac{D}{M}\Delta P_m - \frac{1}{M}\Delta{P_d} \\ \\
+  \diff{\Delta P_m}{t} &= \frac{-\Delta P_m}{T_T} + \frac{P_v}{T_T} \\ \\
+  \diff{\Delta P_v}{t} &= \frac{-1}{T_GR}{\Delta f} - \frac{1}{T_G}{\Delta P_v}  \\ \\
+  ACE(t) &= \Delta f \beta
+\end{align} \\
+
+This can be represented in state space equation as
+\begin{align}
+  \diff{x(t)}{t} &= Ax_o(t) + Bu(t- h(t)) + F(\omega{t}) \\
+  y_o(t) &= Cx_o(t)
+\end{align}
+
+where
+\begin{align}
+  x_o(t) &= [\Delta f \quad  \Delta P_m  \quad \Delta P_v]  \\
+  y_o(t) &= ACE
+\end{align}
+
+\begin{align}
+  A &=
+\begin{bmatrix}
+  \frac{D}{M} & \frac{D}{M} & 0 \\
+  0 & \frac{-1}{T_T} & \frac{1}{T_T} \\
+  \frac{-1}{T_GR} & 0 & \frac{-1}{T_G}
+\end{bmatrix}
+\quad
+  B =
+\begin{bmatrix}
+  0 \\
+  0 \\
+  \frac{1}{T_G}
+\end{bmatrix}
+\\ \\
+  F &=
+\begin{bmatrix}
+  \frac{1}{M} & 0 & 0
+\end{bmatrix}
+\quad
+  C = 
+\begin{bmatrix}
+  \beta & 0 & 0
+\end{bmatrix}
+\end{align}
+
+\begin{equation}
+w(t) = \Delta P_d \quad u(t-h(t)) = \Delta P_c(t)
+\end{equation}
+
+Meaning of Symbols
+\begin{align}
+  \Delta f &-> \text{Variation in system frequency}  \\
+  \Delta P_m &-> \text{Variation in Mechanical Power} \\
+  \Delta P_v &-> \text{Variation in Control Valve Opening} \\
+  ACE(t) &-> \text{Area Controller Error} \\
+  h(t) &-> \text{Delay Stability Margin} \\
+  u(t-h(t)) &-> \text{Input with Delay} \\
+  \Delta P_d &-> \text{Changes in Grid load} \\
+  \Delta P_c &-> \text{Changes in System Control  Signals} \\
+  M &-> \text{Moment of Inertia} \\
+  D &-> \text{Damping Coefficient of generator} \\
+  T_T &-> \text{Inertia time of the Generator of Steam Turbine} \\
+  T_G &-> \text{Inertia time of the Governor of the unit } \\
+  R &-> \text{Speed Drop coefficient of the Governor} \\
+  \beta &-> \text{frequency Deviation Factor} 
+\end{align} 
+
+The PID Controller handles the Area Controller Error(ACE) and produces a feedback 
+using the equation stated as follows
+
+\begin{equation}
+  u(t)=K_pACE(t) + K_I\int ACE(t)dt + K_D \diff{ACE(t)}{dt}
+\end{equation}
+where
+\begin{align}
+  K_I &-> \text{Integral gain}\\
+  K_P &-> \text{Proportional gain} \\
+K_D &->\text{Derivative gain}
+\end{align}
+\section{Results}
+%Show plots of any data collected and describe with words what your plots are showing. Describe the relationship between variables and time. Remember to number all your figures.  This is the most critical part affect the technical achievement.\\
+%No picture, table, schematic, or graph should appear without a name (generally of the form Fig.1 o Table 1). %~\ref{fig:ecg} or Table~\ref{table:Exps}), 
+%None should appear without a reference to them by name in the main body of the writing.
+%All figures and tables must be discussed in the text, including what it is, significant observations, and analysis. \\
+%Capitalize “Table” and “Fig.” any time they are accompanied by specific table or figure numbers. Examples: “The measured data are plotted in Fig. 2. The figure shows a linear relationship in....”. “The table shows …” vs. “The data of Table 3…” \\
+
+%\begin{table}[!ht] %[H]
+%\centering
+%\label{table:Exps}
+%\begin{tabular}{ll}
+%Student &  Max Temperature \\ \hline
+%aabbbccc &  $35^{\circ}$   \\
+%eeeddd &   $54^{\circ}$ \\
+%eeeddd &   $54^{\circ}$ \\
+%\end{tabular}
+%\caption{Temperature measurements performed for session 1.}
+%\end{table}
 
 %you can use a table generator from here: https://www.tablesgenerator.com/#
 
-Use your word processor to make “real tables” (i.e., boxed in, etc.). Center all tables and include a heading and caption with the appropriate table number below each table. For example, “Table 1: Temperature measurements performed for session 1.” 
+%Use your word processor to make “real tables” (i.e., boxed in, etc.). Center all tables and include a heading and caption with the appropriate table number below each table. For example, “Table 1: Temperature measurements performed for session 1.” 
 
-Figures must be centered, and the figure number and caption is centered beneath the
-figure. For example, “Figure~\ref{fig:ecg}”. 
+%Figures must be centered, and the figure number and caption is centered beneath the
+%figure. For example, “Figure~\ref{fig:ecg}”. 
 
-\begin{figure}[H]%[!ht]
-\begin {center}
-\caption{Illustrations, graphs, and photographs may fit across both columns, if necessary. Your artwork must be in place in the article.}
-\label{fig:ecg}
-\end {center}
-\end{figure}
+%\begin{figure}[H]%[!ht]
+%\begin {center}
+%\caption{Illustrations, graphs, and photographs may fit across both columns, if necessary. Your artwork must be in place in the article.}
+%\label{fig:ecg}
+%\end {center}
+%\end{figure}
 
-Always spell out table or Table. Give abbreviation of Figure, i.e., Fig., when used in
-the middle to end of sentence, but spell it out when used at the very start of the
-sentence. \\
+%Always spell out table or Table. Give abbreviation of Figure, i.e., Fig., when used in
+%the middle to end of sentence, but spell it out when used at the very start of the
+%sentence. \\
 
 
-All graphs must be done with a computer (i.e., spreadsheet software such as
-Microsoft Excel or even Matlab.). Do not include hand drawn graphs unless
-specifically instructed to do so.  \\
-Include a leading zero when a number’s magnitude is less than 1 (use 0.83 instead of
-writing .83). \\
-Use your word processor for Greek symbols for common engineering quantities as $\beta$, $\pi$, $\gamma$ ,$\Omega$ . 
+%All graphs must be done with a computer (i.e., spreadsheet software such as
+%Microsoft Excel or even Matlab.). Do not include hand drawn graphs unless
+%specifically instructed to do so.  \\
+%Include a leading zero when a number’s magnitude is less than 1 (use 0.83 instead of
+%writing .83). \\
+%Use your word processor for Greek symbols for common engineering quantities as $\beta$, $\pi$, $\gamma$ ,$\Omega$ . 
 
 \section{Discussion and Summary}
-Discuss any interesting result related to the materials used or to any claim from the introduction. Discuss your measurements using engineering terms (accuracy, precision, resolution, etc).  Give technical conclusions. Restate the main objectives and how or to what degree they were achieved. What principles, laws and/or theory
-were validated by the experiment? Describe some applications of your results and comment any possible recommended future work.
+%Discuss any interesting result related to the materials used or to any claim from the introduction. Discuss your measurements using engineering terms (accuracy, precision, resolution, etc).  Give technical conclusions. Restate the main objectives and how or to what degree they were achieved. What principles, laws and/or theory
+%were validated by the experiment? Describe some applications of your results and comment any possible recommended future work.
 
 
 
@@ -219,13 +350,13 @@ were validated by the experiment? Describe some applications of your results and
 
 
 \appendices
-\section{Hand calculations (or name your title for appendix subtitle)}
-List any extra evidence such as photos of the session, that may help you support your claims.
-You can include all hand calculations, extra graphs and plots, simulation results, etc. 
+%\section{Hand calculations (or name your title for appendix subtitle)}
+%List any extra evidence such as photos of the session, that may help you support your claims.
+%You can include all hand calculations, extra graphs and plots, simulation results, etc. 
 
-% use section* for acknowledgment
+ %use section* for acknowledgment
 \section*{Acknowledgment}
-The authors would like to thank...
+%The authors would like to thank...
 
 
 
@@ -249,30 +380,30 @@ The authors would like to thank...
 \printbibliography
 
 
-Examples of references:  \\[0.001in]
+%Examples of references:  \\[0.001in]
 
-Example of data book:\\[0.1in]
-[2] National Operational Amplifiers Databook. Santa Clara: National Semiconductor
-Corporation, 1995 Edition, p. I-54. \\[0.1in]
-Example of textbook: \\[0.1in]
-[3]M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.\\[0.1in]
-Example of scientific journal paper:\\[0.1in]
-[4] J.W. Smith, L.S. Alans and D.K. Jones, “An operational amplifier approach to
-active cable modeling”, IEEE Transactions on Modeling, vol. 4, no. 2, 1996, pp.
-128-132.\\[0.1in]
-Example of conference paper proceedings:\\[0.1in]
-[5] J.W. Smith, L.S. Alans and D.K. Jones, “Active cable models for lossy
-transmission line circuits”, in Proc. 1995 IEEE Modeling Symposium, 1996, pp.
-1086-89.\\[0.1in]
+%Example of data book:\\[0.1in]
+%[2] National Operational Amplifiers Databook. Santa Clara: National Semiconductor
+%Corporation, 1995 Edition, p. I-54. \\[0.1in]
+%Example of textbook: \\[0.1in]
+%[3]M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.\\[0.1in]
+%Example of scientific journal paper:\\[0.1in]
+%[4] J.W. Smith, L.S. Alans and D.K. Jones, “An operational amplifier approach to
+%active cable modeling”, IEEE Transactions on Modeling, vol. 4, no. 2, 1996, pp.
+%128-132.\\[0.1in]
+%Example of conference paper proceedings:\\[0.1in]
+%[5] J.W. Smith, L.S. Alans and D.K. Jones, “Active cable models for lossy
+%transmission line circuits”, in Proc. 1995 IEEE Modeling Symposium, 1996, pp.
+%1086-89.\\[0.1in]
 
-Example of Internet web page:\\[0.1in]
-[6] Approximate material properties in isotropic materials. Milpitas, CA: Specialty
-Engineering Associates, Inc. web site: www.ultrasonic.com, downloaded Aug. 20,
-2001. 
+%Example of Internet web page:\\[0.1in]
+%[6] Approximate material properties in isotropic materials. Milpitas, CA: Specialty
+%Engineering Associates, Inc. web site: www.ultrasonic.com, downloaded Aug. 20,
+%2001. 
 
-List and number all bibliographical 
-references at the end of your paper in {\bf 9 or 10 point} Times, with 10-point interline spacing. When referenced within the text, enclose the citation number in square brackets, for example [1]. \\
-Use IEEE format. Cite any external work that you used (data sheets, text books, Wikipedia articles, . . . ). If you get a formula from a Wikipedia article, you must cite the article, giving the title, the URL, and the data you accessed the article as a minimum. If you copy a figure, not only must you cite the article you copied from, but you must give explicit figure credit in the caption for the figure: This image copied from . . . . If you modify a figure or base your figure on one that has been published elsewhere, you still need to give credit in the caption: This image adapted from . . . .\\[0.1in]
+%List and number all bibliographical 
+%references at the end of your paper in {\bf 9 or 10 point} Times, with 10-point interline spacing. When referenced within the text, enclose the citation number in square brackets, for example [1]. \\
+%Use IEEE format. Cite any external work that you used (data sheets, text books, Wikipedia articles, . . . ). If you get a formula from a Wikipedia article, you must cite the article, giving the title, the URL, and the data you accessed the article as a minimum. If you copy a figure, not only must you cite the article you copied from, but you must give explicit figure credit in the caption for the figure: This image copied from . . . . If you modify a figure or base your figure on one that has been published elsewhere, you still need to give credit in the caption: This image adapted from . . . .\\[0.1in]
 
-% that's all folks
+ %that's all folks
 \end{document}
