@@ -146,7 +146,6 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
 %\begin{equation}
   %(1-x^2)
 %\end{equation}
-\subsection{Bessel}
 \subsection{Bessle Legendre Inequalities}
  \begin{align}
    \int_{-h}^{0}x(u)Rx(u)du \geq \frac{1}{h}
@@ -174,7 +173,7 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
    \omega_k&= \int_{-h}^{0}P_k(u)x(u)du, 
  \end{align}
  for all natural numbers k and x is a square integrable function
- from an open interval,I to R^n 
+ from an open interval,I to $R^n$
 \subsection{Lyapunov-Krasovskii Functional}
 \subsection{Prime mover}
 \subsection{Speed governor}
@@ -283,6 +282,124 @@ where
   K_P &-> \text{Proportional gain} \\
 K_D &->\text{Derivative gain}
 \end{align}
+
+
+The virtual state and output variables can be writen as follows
+\begin{align}
+  \bar{x}_0(t) &= 
+  \begin{bmatrix}
+    x_0^T(t) & \int y_0^T(t) dt
+  \end{bmatrix}^T \\
+  \bar{y}_0(t) &= 
+  \begin{bmatrix}
+    y_0^T(t) & \int y_0^T(t)dt & \diff{y_0^T(t)}{t}
+  \end{bmatrix}^T
+\end{align}
+
+Because CB = 0, we have the transformation
+\begin{align}
+  \diff{\bar{x}}{t} &= \bar{A}\bar{x}_0(t) + \bar{B}u(t-h(t)) + \bar{F}\omega (t) \\
+  \bar{y}_0(t) &= \bar{C}\bar{x}_0(t) + \bar{D}_w\omega(t) \\
+  u(t)&= -K\bar{y}_0(t)
+\end{align}
+
+\begin{align}
+  \diff{\bar{x}_{0}(t)}{t} = \bar{A}\bar{x}_{0}(t) + \bar{A}_{d}\bar{x}_{0}(t-h(t)) + \bar{B}_w\omega(t) \\
+\end{align}
+where $\bar{A}_{d}= -\bar{B}K\bar{C}$ ,$\bar{B}_w = \bar{F} - \bar{B}K\bar{D}_w $\\
+
+Consider an equilibrium point (point for which $\diff{\bar{x}_0(t)}{t} = 0$) at $\bar{x}_0^*(t)$
+Therefore,           
+\begin{equation}
+  0 = \bar{A}\bar{x}_0^*(t) + \bar{A}_d\bar{x}_0^*(t-h(t)) + \bar{B}_w\omega(t)
+\end{equation}
+
+Perfoming State Transformation where $x(t) = \bar{x}(t)-\bar{x}_0^*(t)$, we have
+\begin{equation}
+  \diff{x}{t} = \bar{A}x(t) + \bar{A}_dx(t-h(t)) \\
+\end{equation}
+where 
+\begin{align}
+  \bar{A} &=
+  \begin{bmatrix}
+    \frac{-D}{M} & \frac{1}{M} & 0 & 0 \\
+    0 & \frac{-1}{T_T} & \frac{1}{T_T} & 0 \\
+    \frac{-1}{T_GR} & 0& \frac{-1}{T_G} & 0 \\
+    \beta & 0 & 0 & 0
+  \end{bmatrix} \\
+  \bar{A}_d &=
+  \begin{bmatrix}
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    \frac{\beta D K_D}{MT_G} - \frac{\beta K_{P}}{T_G} & \frac{-\beta K_D}{MT_G} & 0 & \frac{-K_1}{T_G} \\
+    0 & 0 & 0 & 0
+  \end{bmatrix}
+\end{align}
+Since the parameters of the power system experience some disturbance, this is accounted for by the following: \\
+ let $\alpha$ be the disturbance deviation for prime mover \\
+ let $\beta$ be the disturbance deviation for Governor \\
+ 
+ The new value of $T_T$ due to error change can be accounted is
+ \begin{align}
+   T_{Ta} &\epsilon [(1-\alpha \%)T_T, (1+\alpha\%)T_T] \\
+   T_{Ga} &\epsilon [(1-\gamma \%)T_G, (1+\gamma\%)T_G]
+ \end{align}
+ \begin{align}
+   T_{Ta} &-> \text{Inertia time constant for prime mover} \\
+   T_{Ga} &-> \text{Inertia time contant for Governor}
+ \end{align}
+ Therefore,
+ \begin{align}
+   \frac{1}{T_{Ta}} = \frac{\alpha _1}{T_T} + f_1(t)\frac{\alpha _2}{T_T}\\
+   \frac{1}{T_{Ga}} = \frac{\gamma _1}{T_G} + f_2(t)\frac{\gamma _2}{T_G}
+\end{align}
+ where 
+ \begin{align}
+   f_1(t),&f_2(t) \epsilon  [-1,1] \\
+   \alpha _1 &= \frac{1}{(1-\alpha)(1+\alpha\%)} , \quad \alpha _2 = \alpha\% \alpha _1 \\
+   \gamma _1 &= \frac{1}{(1-\gamma)(1+\gamma\%)} , \quad \gamma _2 = \gamma \%\gamma
+ \end{align}
+
+ Therefore the new equation including delay is 
+\begin{align}
+  \diff{x}{t}=(A_0 + \Delta A_0)x(t) + (A_d + \Delta A_d)(x(t-h(t))),
+ \end{align}
+ where
+ \begin{flalign}
+   &[\Delta A_0 \quad \Delta A_d] = HF(t)[E_1 \quad E_2] \\
+   &H = I  \\
+   F(t) &= diag\{0,f_1(t),f_2(t),0\} \\
+   &A_0 = 
+   \begin{bmatrix}
+     \frac{-D}{M} &\frac{1}{M} &0 &0 \\
+     0 &\frac{-\alpha _1}{T_T} &\frac{\alpha}{T_T} &0 \\
+     -\frac{\gamma}{T_GR} &0 -&\frac{\gamma _1}{T_G} &0 \\
+     \beta& 0 & 0 & 0
+   \end{bmatrix} \\
+   &A_d =
+   \begin{bmatrix}
+     0&0&0 &0 \\
+     0 &0&0&0 \\
+     \frac{\gamma _1 \beta D K_D}{MT_G} - \frac{\gamma _1\beta K_p}{T_G}&0 -&\frac{\gamma _1\beta K_D}{MT_G} &-\frac{\gamma _1 K_1}{T_G} \\
+     0& 0 & 0 & 0
+   \end{bmatrix} \\
+   &E_1=
+   \begin{bmatrix}
+     0&0&0&0 \\
+     0&-\frac{\alpha _2}{T_1} &{\alpha _2}{T_T} &0  \\
+     -\frac{\gamma _2}{T_GR} &0 &\frac{-\gamma _2}{T_G} &0 \\
+     0&0&0&0 
+   \end{bmatrix} \\
+   &E_2 =
+   \begin{bmatrix}
+     0&0&0 &0 \\
+     0 &0&0&0 \\
+     \frac{\gamma _2 \beta D K_D}{MT_G} - \frac{\gamma _2\beta K_p}{T_G}&0 -&\frac{\gamma _2\beta K_D}{MT_G} &-\frac{\gamma _2 K_1}{T_G} \\
+     0& 0 & 0 & 0
+   \end{bmatrix}
+ \end{flalign}
+
+\section{Robust Stability}
 \section{Results}
 %Show plots of any data collected and describe with words what your plots are showing. Describe the relationship between variables and time. Remember to number all your figures.  This is the most critical part affect the technical achievement.\\
 %No picture, table, schematic, or graph should appear without a name (generally of the form Fig.1 o Table 1). %~\ref{fig:ecg} or Table~\ref{table:Exps}), 
