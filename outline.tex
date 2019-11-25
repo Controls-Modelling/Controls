@@ -339,7 +339,9 @@ Since the parameters of the power system experience some disturbance, this is ac
  let $\alpha$ be the disturbance deviation for prime mover \\
  let $\beta$ be the disturbance deviation for Governor \\
  
- The new value of $T_T$ due to error change can be accounted is
+ Because the values of the deviations are extremely small, we use the percentage error.
+ Therefore,the new value of $T_T$ due to error change can be accounted for as
+
  \begin{align}
    T_{Ta} &\epsilon [(1-\alpha \%)T_T, (1+\alpha\%)T_T] \\
    T_{Ga} &\epsilon [(1-\gamma \%)T_G, (1+\gamma\%)T_G]
@@ -348,7 +350,14 @@ Since the parameters of the power system experience some disturbance, this is ac
    T_{Ta} &-> \text{Inertia time constant for prime mover} \\
    T_{Ga} &-> \text{Inertia time contant for Governor}
  \end{align}
- Therefore,
+  Given the values above, $T_T$ can be expressed as
+  \begin{align}
+    T_T = \frac{1+\gamma \alpha \%}{(1-\alpha \%)(1+\alpha \%)} T_Ta
+  \end{align}
+  where $\gamma \epsilon [-1\quad1]$ is a constant \\ 
+   
+  We can however write the above equation in a more general form by letting $\gamma$ be function 
+  on the same interval. Therefore we write in a more compact form as follows
  \begin{align}
    \frac{1}{T_{Ta}} = \frac{\alpha _1}{T_T} + f_1(t)\frac{\alpha _2}{T_T}\\
    \frac{1}{T_{Ga}} = \frac{\gamma _1}{T_G} + f_2(t)\frac{\gamma _2}{T_G}
@@ -400,6 +409,8 @@ Since the parameters of the power system experience some disturbance, this is ac
  \end{flalign}
 
 \section{Robust Stability}
+
+
 \section{Results}
 %Show plots of any data collected and describe with words what your plots are showing. Describe the relationship between variables and time. Remember to number all your figures.  This is the most critical part affect the technical achievement.\\
 %No picture, table, schematic, or graph should appear without a name (generally of the form Fig.1 o Table 1). %~\ref{fig:ecg} or Table~\ref{table:Exps}), 
