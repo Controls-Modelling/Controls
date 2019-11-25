@@ -177,6 +177,71 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
 \subsection{Lyapunov-Krasovskii Functional}
 \subsection{Prime mover}
 \subsection{Speed governor}
+\section{Controllability and Stability Analysis}
+\subsection{Controllability} The above linear time variant power system is controllable only if the matrix \\
+\begin{equation}
+\begin{bmatrix}
+B & AB & AB^2 
+\end{bmatrix}
+\text{preserves rank}
+\end{equation}
+
+where $t_{0}$ is the initial time \\
+$t_{f}$ is the final time
+Checking the condition for controllability: \\
+We have \\
+
+\begin{equation}
+B =
+\begin{bmatrix}
+0 \\
+ 0 \\
+ \frac{1}{T_{G}}
+\end{bmatrix}
+A =
+\begin{bmatrix}
+\frac{D}{M} & \frac{D}{M} & 0 \\
+ 0 & \frac{-1}{T_{T}} & \frac{1}{T_{T}}\\
+ \frac{-1}{T_{G}R} & 0 & \frac{-1}{T_{G}} \\
+\end{bmatrix} \\
+\end{equation}
+\newline
+\begin{equation}
+AB =
+\begin{bmatrix}
+0 \\
+ \frac{1}{T_{G}T_{T}} \\
+ \frac{1}{T_{G}^2}
+\end{bmatrix}
+A^2B =
+\begin{bmatrix}
+\frac{D}{MT_{G}T_{T}} \\ \\
+ \frac{T_{G} + T_{T}}{T_{G}^2T_{T}^2} \\ \\
+ \frac{1}{T_{G}^2}
+\end{bmatrix}
+\end{equation}
+\\
+\begin{equation}
+\begin{bmatrix}
+B & AB & AB^2 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+0 &  0 & \frac{D}{MT_{G}T_{T}} \\ \\
+0 & \frac{1}{T_{G}T_{T}} & \frac{T_{G} + T_{T}}{T_{G}^2T_{T}^2} \\ \\
+ \frac{1}{T_{G}}  & \frac{1}{T_{G}^2} &  \frac{1}{T_{G}^2}
+\end{bmatrix}
+\end{equation}
+\\
+\begin{equation}
+\text{det}
+\begin{bmatrix}
+B & AB & AB^2 
+\end{bmatrix}
+= \frac{-D}{MT_{G}^3T_{T}^2} \neq 0
+\end{equation}
+Therefore the the matrix $[B \quad AB \quad A^2B]$ preserves rank. Hence, the power system is controllable which simultaneously implies that the system is stabilizable.
+
 \section{System Model and Derivations}
 
 \begin{figure}
