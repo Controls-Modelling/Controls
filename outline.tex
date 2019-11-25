@@ -474,8 +474,34 @@ Since the parameters of the power system experience some disturbance, this is ac
  \end{flalign}
 
 \section{Robust Stability}
-
-
+  \begin{align}
+  \begin{bmatrix}
+     \phi(0)&\theta _1^T&hY_2^T\\
+     *&-\lambda I&0\\
+     *& * & -h\bar{R}
+   \end{bmatrix} < 0 \\
+  \begin{bmatrix} \\
+     \phi(h)&\theta _1^T&hY_1^T\\
+     *&-\lambda I&0\\
+     *& * & -h\bar{R}
+   \end{bmatrix} < 0 \\
+ \end{align}
+where $\phi(h(t))=\phi _+ \phi _2 + \lambda \theta _2^T \theta _2$   
+\\
+proof
+From lyapunov theory, an LK functional can be constructed as follows
+\begin{align}
+  V(x_t) = \eta ^T (t)P \eta(t) + \int _t-h^t \theta ^T(t,s)Q\theta(t,s)ds  \\ +\int _{-h} ^0 \int _{t+\theta}^t\diff{x^T(s)}{t}R\diff{x^T}{t}dsd\theta
+\end{align}
+when $P>0$ $Q> 0$ and $R>0$, the LK functional is positive. 
+Therefore,
+\begin{equation}
+  \diff{V(x_t)}{t}= \xi ^T (t)\Phi _1 \xi (t) - \int _{t-h}^t \diff{x^T(s)}{t}R\diff{x}{t} ds
+\end{equation}
+Then 
+ \begin{equation}
+   - \int ^{t-h(t)}_{t-h}\diff{x^T(s)}{t}R\diff{x}{t}ds =
+ \end{equation}
 \section{Results}
 %Show plots of any data collected and describe with words what your plots are showing. Describe the relationship between variables and time. Remember to number all your figures.  This is the most critical part affect the technical achievement.\\
 %No picture, table, schematic, or graph should appear without a name (generally of the form Fig.1 o Table 1). %~\ref{fig:ecg} or Table~\ref{table:Exps}), 
