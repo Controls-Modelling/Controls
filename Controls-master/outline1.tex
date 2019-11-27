@@ -504,7 +504,7 @@ Since the parameters of the power system experience some disturbance, this is ac
 
  \subsection{lemma2}
  For any real matrices $Z=Z^T, H$ and E with appropriate dimensions, if the inequality $Z +HFE+E^TF^TH^T<0$ is true, for anymore
- $F$ that satisfies $F^TF\leqI$, we can obtain the following inequality when a scalar $\lambda > 0$ exists
+ $F$ that satisfies $F^TF\leq$, we can obtain the following inequality when a scalar $\lambda > 0$ exists
  \begin{equation} 
    Z+\lambda HH^T +\lambda ^{-1}E^TE<0
  \end{equation}
@@ -518,26 +518,26 @@ Since the parameters of the power system experience some disturbance, this is ac
  \begin{align}
    \theta _0(s) &= [\diff{x^T(s)}{t} x^T(s)]^T \\ \\
    v_i &= \int ^t _{t-h(t)} \frac{(t-s)^{i-1}x^T(s)}{h^i(t)}ds \\ \\
-   \omega _i &= \int ^{t-h(t)} _{t-h} \frac{[(t-h(t)-s)]^{i-1}x^T(s)}{\widetile{h}^i(t)}ds \quad  i= 1,2 \\ \\
+   \omega _i &= \int ^{t-h(t)} _{t-h} \frac{[(t-h(t)-s)]^{i-1}x^T(s)}{\widetilde{h}^i(t)}ds \quad  i= 1,2 \\ \\
    \varkappa _1 &= \int ^t _{t-h} x^T(s)ds \quad \varkappa _2 =\int ^t _{t-h} (t-s)x^T(s)ds \\ \\
    \eta _0(t) &= [x^T(t)\quad x^T(t-h)]^T] \\ \\
-   \eta _1(t) &= [x^T(t)\quad x^T(t-h(t)) \quad x^T(t-h)]^T  \\ \\
+   \eta _1(t) &= [x^T(t)\quad x^T(t-h(t)) \quad x^T(t-h)]^T \\ \\ 
    \eta _2(t) &= [v_1 \quad v_2 \quad \omega _1 \quad \omega _2]^T \\ \\
    \eta _3(t) &= [h(t)v_1 \quad h(t)v_2 \quad \widetilde{h}(t)\omega _1 \quad \widetilde{h}(t)\omega _2]^T \\ \\
    \eta _4(t) &= [\diff{x^T}{t}(t-h)  \quad \diff{x^T}{t}]^T \\ \\
-   \eta (t) &=[\eta _0^T(t) \quad \varkappa _1 \quad \varkappa _2]^T \\ \\
+   \eta (t) &=[\eta _0^T(t) \quad \varkappa _1 \quad \varkappa _2]^T  \\ \\
    \theta(t,s)&=[\theta _0^T(s) \quad \eta _0 ^T(t) \quad \int _{t-h}^s x^T(\theta)d\theta]^T \\ \\
-   \xi (t) &= [\eta _1^T(t) \quad \eta _2^T(t) \quad  \eta _3^T(t) \quad \eta _4^T]^T \\ \\
-   e_i &= [O_{n(i-1)n}\quad I_n \quad O_{n(13-i)n}] \quad i=1,2,...,13 \\ \\
-   \Pi_0&=[h(t)(e_9^T +e_{10}^T) +\widetilde{h}(t)e^T_{11} ]^T \\ \\
+   \xi (t) &= [\eta _1^T(t) \quad \eta _2^T(t) \quad  \eta _3^T(t) \quad \eta _4^T]^T   \\ \\
+   e_i &= [O_{n(i-1)n}\quad I_n \quad O_{n(13-i)n}] \quad i=1,2,...,13 \\ \\ 
+   \Pi_0&=[h(t)(e_9^T +e_{10}^T) +\widetilde{h}(t)e^T_{11} ]^T 
+ \end{align}
+ \begin{align}
  \Pi _1 &= [e_1^T \quad e_3^T \quad e_8^T+e_{10}^T \quad \Pi_0^T]^T \\ \\
  \Pi _2 &= [e_{13}^T \quad e_1^T-e_3^T \quad e_{12}^T \quad e_{8}^T+e_{10}^T \quad -he_3^T]^T \\ \\
  \Pi _3 &= [e_{13}^T \quad e_1^T \quad e_{1}^T \quad e_{3}^T+e_{8}^T +e_{10}^T]^T \\ \\
  \Pi _4 &= [e_{12}^T \quad e_3^T \quad e_{1}^T \quad e_{3}^T \quad 0]^T \\ \\
  \Pi _5 &= [e_{1}^T - e_3^T \quad e_{8}^T + e_{10}^T \quad he_{1}^T \quad he_3^T \quad \Pi _0^T]^T \\ \\
- \Pi _6 &= [0 \quad 0 \quad e_{13}^T \quad e_{12}^T \quad -e^T_3]^T \\ \\
- \end{align}
- \begin{align}
+ \Pi _6 &= [0 \quad 0 \quad e_{13}^T \quad e_{12}^T \quad -e^T_3]^T \\ \\  
  \Pi _{7a} &= [e_1^T \quad \e_2^T \quad \e_4^T \quad \e_5^T]^T \\ \\
  \Pi _7 &= [\Pi\quad \Pi _{7a} ]\\ \\
  \Pi _{8a} &= [e_2^T \quad \e_3^T \quad \e_6^T \quad \e_7^T]^T \\ \\ 
@@ -552,7 +552,7 @@ Since the parameters of the power system experience some disturbance, this is ac
  \Phi _1 &= Sym\{\Pi _1^TP\Pi _2 + \Pi _5^TQ\Pi  _6\}  \\ \\
          &+ \Pi _3^TQ\Pi _3 - \Pi _4^TQ\Pi _4 + h\diff{x^T(t)}{t}R\diff{x}{t} \\ \\
  \Phi _2 &= Sym\{\Pi _{10}^T\Pi _{11} + N\Pi _{9}+\Pi  _7^TY_1 +\Pi_8^TY_2\}  \\ \\
- \Phi _3 &= h(t)Y_1^T\widetile{R}^{-1}Y_1+\widetilde{h}(t)Y_2^T\widetilde{R}^{-1}Y_2
+ \Phi _3 &= h(t)Y_1^T\widetilde{R}^{-1}Y_1+\widetilde{h}(t)Y_2^T\widetilde{R}^{-1}Y_2
  \end{align}
 
 \section{Robust Stability}
@@ -714,14 +714,11 @@ i=1,2,...,6
 On applying the proposed method, we can derive the following criterion for this functional: 
 \\
 Corollary 1:
-\begin{equation}
-\text{For a scalar \={$\lambda$}} > 0 \text{, if there exist real symmetric matrices}
-\end{equation}
+For a scalar $\lambda > 0$ , if there exist real symmetric matrices
 \begin{equation}
 \text{\={P}} (\text{$\in {R^{4n*4n}}$}) > 0, \quad  \text{\={Q}}(\text{$\in {R^{4n*4n}}$}) > 0, \quad \text{\={R}} (\text{$\in {R^{n*n}}$}) > 0,
 \end{equation}
 and any real matrices {\={Y}},{\={$X_1$}},{\={$X_2$}}, and {\={$X_3$}}
-\section{Results}
 with appropriate dimensions, the system (111) is stable if the following LMI (121) is satisfied $0\leqslant\text{\={h}}\leqslant h$
 \begin{equation}
 \begin{bmatrix}
@@ -748,7 +745,8 @@ where
 \text{\={$\Pi_{9}$}} &= [\text{\={$e^{T}_{1}$}}\text{\={$A^{T}_{0}$}} + \text{\={$e^{T}_{2}$}}\text{\={$A^{T}_{d}$}} + -\text{\={$e^{T}_{6}$}}]^T \\
 \end{align}
 The remaining elements and the calculation process are the same as those of Theorem 1.
-\section{Case analysis}
+
+\section{Results and Case analysis}
 To verify the superiority of the method in this study, the LMI toolbox in MATLAB is used to solve the time-delay stability margins of the power system based on PID load frequency control under the conditions of random time-delay and uncertain parameters. System parameters are listed in Table 1
 \begin{figure}[h!]
 \includegraphics[width=\linewidth]{systemparameters.png}
@@ -837,10 +835,16 @@ Based on PID load frequency control, the time-delay robust stability of a power 
 %Include a leading zero when a number’s magnitude is less than 1 (use 0.83 instead of
 %writing .83). \\
 %Use your word processor for Greek symbols for common engineering quantities as $\beta$, $\pi$, $\gamma$ ,$\Omega$ . 
+\section{summary}
+Concepts learned
+\begin{enumerate}
+  \item Knowledge on Power Systems - Superficial understanding on power systems
+  \item Controls with Power - Concepts for LTI was applied for controls component(PID)
+  \item LK functional -We didn't finish digesting the paper on LK functional sent to us by Prof Sesan as we were really pressed for time
 
 \section{Discussion}
-\section{Summary}
-We have made an effort to umderstand the concepts of LK functional and Bessel's integral. But, due to time constraints and complexity of equation implementation of LMI tool was not possible. 
+We made an attempt to use the LMI toolbox, but due to time constraints and complexity of the equation,  the full verification of the above model was not possible.
+
 %Discuss any interesting result related to the materials used or to any claim from the introduction. Discuss your measurements using engineering terms (accuracy, precision, resolution, etc).  Give technical conclusions. Restate the main objectives and how or to what degree they were achieved. What principles, laws and/or theory
 %were validated by the experiment? Describe some applications of your results and comment any possible recommended future work.
 
@@ -868,9 +872,7 @@ We have made an effort to umderstand the concepts of LK functional and Bessel's 
 
  %use section* for acknowledgment
 \section*{Acknowledgment}
-%The authors would like to thank...
-
-
+Prof Sesan Iwarere for pointing us in the right direction.
 
 % references section
 
@@ -894,32 +896,5 @@ We have made an effort to umderstand the concepts of LK functional and Bessel's 
   \item X G Liu, W Wang, H B Zeng, et al. Robust stability analysis of the uncertain time-delay power system. Journal of Hunan University of Technology, 2018,  
   \item S Boyd, L Ghaoui, E Feron, et al. Linear matrix inequalities in system and control theory. SIAM, Philadelphia, 1994 
   \item Construction of Lyapunov-Krasovskii functional for time-varying delay systems by Yassine Ariba and Frederic Gouaisbaut
- \end{enumerate}
-
-%Examples of references:  \\[0.001in]
-
-%Example of data book:\\[0.1in]
-%[2] National Operational Amplifiers Databook. Santa Clara: National Semiconductor
-%Corporation, 1995 Edition, p. I-54. \\[0.1in]
-%Example of textbook: \\[0.1in]
-%[3]M. Young, The Technical Writer’s Handbook. Mill Valley, CA: University Science, 1989.\\[0.1in]
-%Example of scientific journal paper:\\[0.1in]
-%[4] J.W. Smith, L.S. Alans and D.K. Jones, “An operational amplifier approach to
-%active cable modeling”, IEEE Transactions on Modeling, vol. 4, no. 2, 1996, pp.
-%128-132.\\[0.1in]
-%Example of conference paper proceedings:\\[0.1in]
-%[5] J.W. Smith, L.S. Alans and D.K. Jones, “Active cable models for lossy
-%transmission line circuits”, in Proc. 1995 IEEE Modeling Symposium, 1996, pp.
-%1086-89.\\[0.1in]
-
-%Example of Internet web page:\\[0.1in]
-%[6] Approximate material properties in isotropic materials. Milpitas, CA: Specialty
-%Engineering Associates, Inc. web site: www.ultrasonic.com, downloaded Aug. 20,
-%2001. 
-
-%List and number all bibliographical 
-%references at the end of your paper in {\bf 9 or 10 point} Times, with 10-point interline spacing. When referenced within the text, enclose the citation number in square brackets, for example [1]. \\
-%Use IEEE format. Cite any external work that you used (data sheets, text books, Wikipedia articles, . . . ). If you get a formula from a Wikipedia article, you must cite the article, giving the title, the URL, and the data you accessed the article as a minimum. If you copy a figure, not only must you cite the article you copied from, but you must give explicit figure credit in the caption for the figure: This image copied from . . . . If you modify a figure or base your figure on one that has been published elsewhere, you still need to give credit in the caption: This image adapted from . . . .\\[0.1in]
-
- %that's all folks
+\end{enumerate}
 \end{document}
