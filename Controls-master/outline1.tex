@@ -473,7 +473,83 @@ Since the parameters of the power system experience some disturbance, this is ac
    \end{bmatrix}
  \end{flalign}
 
+ \subsection{lemma1}
+ let $\omega$ be a differentiable functional:$[a,b] -> R^n$. For a real symmetric matrix $Z>0$ and any real matrix M with appropriate
+ dimensions, the followin inequality holds:
+ \begin{equation}
+   -\int _a^b \diff{w^T}{s}Z\diff{w^T}{s}ds \leq \xi ^T[Sym\{\Pi ^T M\}+(b-a)M^T\widetilde{Z}M]\xi
+ \end{equation}
+ where
+ \begin{align}
+   \widetilde{Z}&=diag\{Z,\quad 3Z,\quad 5Z\} \\
+   \eta&=[\omega (b) \quad \omega \quad (a) \quad \gamma _1 \quad \gamma _2]^T \\
+   \gamma _1 &= \int _a ^b \frac{\omega (s)ds}{b-a} \\
+   \gamma _2 &= \int _a ^b \frac{\omega (s)(b-s)ds}{(b-a)^2} \\
+   H &=
+   \begin{bmatrix}
+     I& -I &0 &0 \\
+     I& I &-2I &0 \\
+     I& -I &-6I &12I
+   \end{bmatrix}
+ \end{align}
+
+ \subsection{lemma2}
+ For any real matrices $Z=Z^T, H$ and E with appropriate dimensions, if the inequality $Z +HFE+E^TF^TH^T<0$ is true, for anymore
+ $F$ that satisfies $F^TF\leqI$, we can obtain the following inequality when a scalar $\lambda > 0$ exists
+ \begin{equation} 
+   Z+\lambda HH^T +\lambda ^{-1}E^TE<0
+ \end{equation}
+
+ Notation
+ \begin{align}
+   \widetilde{h}(t) = h-h(t) \\
+   \widetilde{R}=diag\{R \quad 3R \quad 5R\}
+ \end{align} 
+
+ \begin{align}
+   \theta _0(s) &= [\diff{x^T(s)}{t} x^T(s)]^T \\ \\
+   v_i &= \int ^t _{t-h(t)} \frac{(t-s)^{i-1}x^T(s)}{h^i(t)}ds \\ \\
+   \omega _i &= \int ^{t-h(t)} _{t-h} \frac{[(t-h(t)-s)]^{i-1}x^T(s)}{\widetile{h}^i(t)}ds \quad  i= 1,2 \\ \\
+   \varkappa _1 &= \int ^t _{t-h} x^T(s)ds \quad \varkappa _2 =\int ^t _{t-h} (t-s)x^T(s)ds \\ \\
+   \eta _0(t) &= [x^T(t)\quad x^T(t-h)]^T] \\ \\
+   \eta _1(t) &= [x^T(t)\quad x^T(t-h(t)) \quad x^T(t-h)]^T  \\ \\
+   \eta _2(t) &= [v_1 \quad v_2 \quad \omega _1 \quad \omega _2]^T \\ \\
+   \eta _3(t) &= [h(t)v_1 \quad h(t)v_2 \quad \widetilde{h}(t)\omega _1 \quad \widetilde{h}(t)\omega _2]^T \\ \\
+   \eta _4(t) &= [\diff{x^T}{t}(t-h)  \quad \diff{x^T}{t}]^T \\ \\
+   \eta (t) &=[\eta _0^T(t) \quad \varkappa _1 \quad \varkappa _2]^T \\ \\
+   \theta(t,s)&=[\theta _0^T(s) \quad \eta _0 ^T(t) \quad \int _{t-h}^s x^T(\theta)d\theta]^T \\ \\
+   \xi (t) &= [\eta _1^T(t) \quad \eta _2^T(t) \quad  \eta _3^T(t) \quad \eta _4^T]^T \\ \\
+   e_i &= [O_{n(i-1)n}\quad I_n \quad O_{n(13-i)n}] \quad i=1,2,...,13 \\ \\
+   \Pi_0&=[h(t)(e_9^T +e_{10}^T) +\widetilde{h}(t)e^T_{11} ]^T \\ \\
+ \Pi _1 &= [e_1^T \quad e_3^T \quad e_8^T+e_{10}^T \quad \Pi_0^T]^T \\ \\
+ \Pi _2 &= [e_{13}^T \quad e_1^T-e_3^T \quad e_{12}^T \quad e_{8}^T+e_{10}^T \quad -he_3^T]^T \\ \\
+ \Pi _3 &= [e_{13}^T \quad e_1^T \quad e_{1}^T \quad e_{3}^T+e_{8}^T +e_{10}^T]^T \\ \\
+ \Pi _4 &= [e_{12}^T \quad e_3^T \quad e_{1}^T \quad e_{3}^T \quad 0]^T \\ \\
+ \Pi _5 &= [e_{1}^T - e_3^T \quad e_{8}^T + e_{10}^T \quad he_{1}^T \quad he_3^T \quad \Pi _0^T]^T \\ \\
+ \Pi _6 &= [0 \quad 0 \quad e_{13}^T \quad e_{12}^T \quad -e^T_3]^T \\ \\
+ \end{align}
+ \begin{align}
+ \Pi _{7a} &= [e_1^T \quad \e_2^T \quad \e_4^T \quad \e_5^T]^T \\ \\
+ \Pi _7 &= [\Pi\quad \Pi _{7a} ]\\ \\
+ \Pi _{8a} &= [e_2^T \quad \e_3^T \quad \e_6^T \quad \e_7^T]^T \\ \\ 
+ \Pi _8 &= [\Pi \quad \Pi _{8a} ] \\ \\
+ \Pi _{9a} &= [e_8^T -h(t)e^T_4 \quad e^T_9 - h(t)e^T_5]^T \\ \\
+ \Pi _{9b} &= [e_{10}^T -\widetilde{h}(t)e^T_6 \quad e^T_{11} - \widetilde{h}(t)e^T_7]^T \\ \\
+ \Pi _{9} &= [\Pi _{9a}^T \quad \Pi _{9b}^T]^T \\ \\
+ \Pi _{10} &= [e^T_{13}X_1+e_1^TX_2 + e_2^TX_3]^T \\ \\
+ \Pi _{11} &= [e^T_{1}A_0^T+e_2^TA_d^T - e_{13}^T]^T \\ \\
+ \theta _1 &= [\Pi _{10}^T \Pi]^T \\ \\
+ \theta _2 &= [e_1^TE_1^T + e_2^TE_2^T]^T \\ \\
+ \Phi _1 &= Sym\{\Pi _1^TP\Pi _2 + \Pi _5^TQ\Pi  _6\}  \\ \\
+         &+ \Pi _3^TQ\Pi _3 - \Pi _4^TQ\Pi _4 + h\diff{x^T(t)}{t}R\diff{x}{t} \\ \\
+ \Phi _2 &= Sym\{\Pi _{10}^T\Pi _{11} + N\Pi _{9}+\Pi  _7^TY_1 +\Pi_8^TY_2\}  \\ \\
+ \Phi _3 &= h(t)Y_1^T\widetile{R}^{-1}Y_1+\widetilde{h}(t)Y_2^T\widetilde{R}^{-1}Y_2
+ \end{align}
+
 \section{Robust Stability}
+For a scalar $\lamda >0$ , if there exist real symmetric matrices $P (\epsilon R^{4n \times 4n}) >0$, $Q (\epsilon R^{5n\times5n}) > 0$, $R(\epsilon R^{n\times n})>0,$
+and any real matrices $Y_1, Y_2,X_1,X_2,X_3,$ and $N$ with appropriate dimensions, the system is stable if the following LMIs are satisifed for $0\leq h(t) \leq h$
+
   \begin{align}
   \begin{bmatrix}
      \phi(0)&\theta _1^T&hY_2^T\\
