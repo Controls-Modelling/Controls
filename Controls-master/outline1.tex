@@ -175,8 +175,17 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
  for all natural numbers k and x is a square integrable function
  from an open interval,I to $R^n$
 \subsection{Lyapunov-Krasovskii Functional}
+Lyapunov-Krasovskii Functional is obtained from the Lyapunov theory which is used to check the stability of a system. The LK functional derivied from the Lyapunov theory thia power system is given below:
+\begin{equation*}
+V(x_t) = \eta ^T (t)P \eta(t) + \int _t-h^t \theta ^T(t,s)Q\theta(t,s)ds 
+\end{equation*}
+\begin{equation*}
+ +\int _{-h} ^0 \int _{t+\theta}^t\diff{x^T(s)}{t}R\diff{x^T}{t}dsd\theta
+\end{equation*}
 \subsection{Prime mover}
+Prime mover in power provides the necessary mechanical input to the steam turbine. It converts power into mechanical input.
 \subsection{Speed governor}
+Speed governor in control system is used to measure or regulate the speed of the steam turbine.
 \section{Controllability and Stability Analysis}
 \subsection{Controllability} The above linear time variant power system is controllable only if the matrix \\
 \begin{equation}
@@ -829,7 +838,9 @@ Based on PID load frequency control, the time-delay robust stability of a power 
 %writing .83). \\
 %Use your word processor for Greek symbols for common engineering quantities as $\beta$, $\pi$, $\gamma$ ,$\Omega$ . 
 
-\section{Discussion and Summary}
+\section{Discussion}
+\section{Summary}
+We have made an effort to umderstand the concepts of LK functional and Bessel's integral. But, due to time constraints and complexity of equation implementation of LMI tool was not possible. 
 %Discuss any interesting result related to the materials used or to any claim from the introduction. Discuss your measurements using engineering terms (accuracy, precision, resolution, etc).  Give technical conclusions. Restate the main objectives and how or to what degree they were achieved. What principles, laws and/or theory
 %were validated by the experiment? Describe some applications of your results and comment any possible recommended future work.
 
@@ -878,8 +889,12 @@ Based on PID load frequency control, the time-delay robust stability of a power 
 
 %use following command to generate the list of cited references
 
-\printbibliography
-
+\section{bibliography}
+\begin{enumerate} 
+  \item X G Liu, W Wang, H B Zeng, et al. Robust stability analysis of the uncertain time-delay power system. Journal of Hunan University of Technology, 2018,  
+  \item S Boyd, L Ghaoui, E Feron, et al. Linear matrix inequalities in system and control theory. SIAM, Philadelphia, 1994 
+  \item Construction of Lyapunov-Krasovskii functional for time-varying delay systems by Yassine Ariba and Frederic Gouaisbaut
+ \end{enumerate}
 
 %Examples of references:  \\[0.001in]
 
