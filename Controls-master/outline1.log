@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.11.5)  26 NOV 2019 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.11.5)  27 NOV 2019 14:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -510,30 +510,30 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 57--58
+Underfull \hbox (badness 3312) in paragraph at lines 44--45
 []\OT1/ptm/m/n/10 The most re-search meth-ods em-ployed in time-delay
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 57--58
+Underfull \hbox (badness 1552) in paragraph at lines 44--45
 \OT1/ptm/m/n/10 sta-bil-ity the-ory. Fi-nally, the ro-bust sta-bil-ity cri-te-rion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -550,17 +550,17 @@ Missing character: There is no · in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no · in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--68
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
@@ -568,361 +568,184 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Overfull \hbox (15.96857pt too wide) in paragraph at lines 142--142
+Overfull \hbox (15.96857pt too wide) in paragraph at lines 128--128
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--193
+Underfull \hbox (badness 10000) in paragraph at lines 179--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
 <systemmodel.png, id=17, 389.95688pt x 242.78203pt>
 File: systemmodel.png Graphic file (type png)
  <use systemmodel.png>
-Package pdftex.def Info: systemmodel.png used on input line 248.
+Package pdftex.def Info: systemmodel.png used on input line 238.
 (pdftex.def)             Requested size: 252.0pt x 156.89142pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Overfull \hbox (9.04553pt too wide) in paragraph at lines 336--336
+Overfull \hbox (9.04553pt too wide) in paragraph at lines 326--326
 [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 373--375
-
  []
 
 [3 <./systemmodel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 402--406
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--423
-
- []
-
-./outline1.tex:498: Undefined control sequence.
-l.498  $F$ that satisfies $F^TF\leqI
-                                    $, we can obtain the following inequalit...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:530: Undefined control sequence.
-<argument> \widetile 
-                     {h}^i(t)
-l.530  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:530: Undefined control sequence.
-<argument> \widetile 
-                     {h}^i(t)
-l.530  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[4]
-Overfull \vbox (39.5073pt too high) has occurred while \output is active []
-
-
-./outline1.tex:547: Undefined control sequence.
-<argument>  \Pi _{7a} &= [e_1^T \quad \e 
-                                         _2^T \quad \e _4^T \quad \e _5^T]^T...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...a} &= [e_1^T \quad \e _2^T \quad \e 
-                                                  _4^T \quad \e _5^T]^T \\ \...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...quad \e _2^T \quad \e _4^T \quad \e 
-                                                  _5^T]^T \\ \\ \Pi _7 &= [\...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...]\\ \\ \Pi _{8a} &= [e_2^T \quad \e 
-                                                  _3^T \quad \e _6^T \quad \...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...a} &= [e_2^T \quad \e _3^T \quad \e 
-                                                  _6^T \quad \e _7^T]^T \\ \...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...quad \e _3^T \quad \e _6^T \quad \e 
-                                                  _7^T]^T \\ \\ \Pi _8 &= [\...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...\\ \\ \Phi _3 &= h(t)Y_1^T\widetile 
-                                                  {R}^{-1}Y_1+\widetilde {h}...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument>  \Pi _{7a} &= [e_1^T \quad \e 
-                                         _2^T \quad \e _4^T \quad \e _5^T]^T...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...a} &= [e_1^T \quad \e _2^T \quad \e 
-                                                  _4^T \quad \e _5^T]^T \\ \...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...quad \e _2^T \quad \e _4^T \quad \e 
-                                                  _5^T]^T \\ \\ \Pi _7 &= [\...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...]\\ \\ \Pi _{8a} &= [e_2^T \quad \e 
-                                                  _3^T \quad \e _6^T \quad \...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...a} &= [e_2^T \quad \e _3^T \quad \e 
-                                                  _6^T \quad \e _7^T]^T \\ \...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...quad \e _3^T \quad \e _6^T \quad \e 
-                                                  _7^T]^T \\ \\ \Pi _8 &= [\...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:547: Undefined control sequence.
-<argument> ...\\ \\ \Phi _3 &= h(t)Y_1^T\widetile 
-                                                  {R}^{-1}Y_1+\widetilde {h}...
-l.547  \end{align}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./outline1.tex:550: Undefined control sequence.
-<recently read> \lamda 
-                       
-l.550 For a scalar $\lamda
-                           >0$ , if there exist real symmetric matrices $P (...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 580--582
+Underfull \hbox (badness 10000) in paragraph at lines 392--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 588--590
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 592--594
+Underfull \hbox (badness 10000) in paragraph at lines 487--495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 612--614
+Underfull \hbox (badness 10000) in paragraph at lines 487--495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--668
+Underfull \hbox (badness 10000) in paragraph at lines 487--495
 
  []
 
-[6]
-Overfull \hbox (7.81245pt too wide) in paragraph at lines 740--740
-[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--495
+
  []
 
-<systemparameters.png, id=39, 477.28313pt x 79.04532pt>
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--574
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--578
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--598
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--652
+
+ []
+
+[6] <systemparameters.png, id=39, 477.28313pt x 79.04532pt>
 File: systemparameters.png Graphic file (type png)
  <use systemparameters.png>
-Package pdftex.def Info: systemparameters.png used on input line 745.
+Package pdftex.def Info: systemparameters.png used on input line 722.
 (pdftex.def)             Requested size: 252.0pt x 41.73459pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--750
+Underfull \hbox (badness 10000) in paragraph at lines 726--727
 
  []
 
 <stabilitymargin.png, id=40, 478.03593pt x 284.56313pt>
 File: stabilitymargin.png Graphic file (type png)
  <use stabilitymargin.png>
-Package pdftex.def Info: stabilitymargin.png used on input line 758.
+Package pdftex.def Info: stabilitymargin.png used on input line 735.
 (pdftex.def)             Requested size: 252.0pt x 150.0101pt.
  <stabilitymarginfig1.png, id=41, 427.5975pt x 294.34969pt>
 File: stabilitymarginfig1.png Graphic file (type png)
  <use stabilitymarginfig1.png>
-Package pdftex.def Info: stabilitymarginfig1.png used on input line 764.
+Package pdftex.def Info: stabilitymarginfig1.png used on input line 741.
 (pdftex.def)             Requested size: 252.0pt x 173.47166pt.
  <stabilitymarginfig2.png, id=42, 409.53pt x 287.57437pt>
 File: stabilitymarginfig2.png Graphic file (type png)
  <use stabilitymarginfig2.png>
-Package pdftex.def Info: stabilitymarginfig2.png used on input line 769.
+Package pdftex.def Info: stabilitymarginfig2.png used on input line 746.
 (pdftex.def)             Requested size: 252.0pt x 176.9603pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./systemparameters.png> <./stabilitymargin.png> <./stabilitymarginfig1.png>] <frequencydeviation.png, id=50, 435.12563pt x 319.94531pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<frequencydeviation.png, id=43, 435.12563pt x 319.94531pt>
 File: frequencydeviation.png Graphic file (type png)
  <use frequencydeviation.png>
-Package pdftex.def Info: frequencydeviation.png used on input line 782.
+Package pdftex.def Info: frequencydeviation.png used on input line 759.
 (pdftex.def)             Requested size: 252.0pt x 185.2999pt.
-
+ [7 <./systemparameters.png> <./stabilitymargin.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Empty bibliography on input line 881.
+Underfull \vbox (badness 5359) has occurred while \output is active []
 
-[8 <./stabilitymarginfig2.png> <./frequencydeviation.png>] (./outline1.aux)
+
+Underfull \hbox (badness 1590) in paragraph at lines 781--782
+[]\OT1/ptm/m/n/10 Construction of Lyapunov-Krasovskii func-tional for
+ []
+
+[8 <./stabilitymarginfig1.png> <./stabilitymarginfig2.png> <./frequencydeviation.png>] (./outline1.aux)
 Package logreq Info: Writing requests to 'outline1.run.xml'.
 \openout1 = `outline1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 8810 strings out of 494953
- 148850 string characters out of 6180977
- 572135 words of memory out of 5000000
- 11978 multiletter control sequences out of 15000+600000
+ 8807 strings out of 494953
+ 148821 string characters out of 6180977
+ 569135 words of memory out of 5000000
+ 11975 multiletter control sequences out of 15000+600000
  37929 words of font info for 74 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  44i,17n,32p,1542b,672s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on outline1.pdf (8 pages, 971344 bytes).
+Output written on outline1.pdf (8 pages, 971408 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
