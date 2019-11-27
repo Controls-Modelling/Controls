@@ -485,19 +485,15 @@ Since the parameters of the power system experience some disturbance, this is ac
 
  \subsection{lemma2}
  For any real matrices $Z=Z^T, H$ and E with appropriate dimensions, if the inequality $Z +HFE+E^TF^TH^T<0$ is true, for anymore
- $F$ that satisfies $F^TF\leq$, we can obtain the following inequality when a scalar $\lambda > 0$ exists
- \begin{equation} 
-   Z+\lambda HH^T +\lambda ^{-1}E^TE<0
- \end{equation}
-
- Notation
+ $F$ that satisfies $F^TF\leq I$, we can obtain the following inequality when a scalar $\lambda > 0$ exists $Z+\lambda HH^T +\lambda ^{-1}E^TE<0$ \\ \\
+ Proof \\ \\
+ Consider $H^T=FE$ and $\lambda =1$ , therefore we have 
+   $Z+HH^T+E^T(F^TF)E<0$.
+Since $F^TF< I$, it implies 
+$Z+HH^T +E^TE<0$ \\ \\
+ Notation To be Used \\ 
  \begin{align}
-   \widetilde{h}(t) = h-h(t) \\
-   \widetilde{R}=diag\{R \quad 3R \quad 5R\}
- \end{align} 
-
- \begin{align}
-   \theta _0(s) &= [\diff{x^T(s)}{t} x^T(s)]^T \\ \\
+   \theta _0(s) &= [\diff{x^T(s)}{t} x^T(s)]^T \quad  \widetilde{h}(t) = h-h(t) \\ \\
    v_i &= \int ^t _{t-h(t)} \frac{(t-s)^{i-1}x^T(s)}{h^i(t)}ds \\ \\
    \omega _i &= \int ^{t-h(t)} _{t-h} \frac{[(t-h(t)-s)]^{i-1}x^T(s)}{\widetilde{h}^i(t)}ds \quad  i= 1,2 \\ \\
    \varkappa _1 &= \int ^t _{t-h} x^T(s)ds \quad \varkappa _2 =\int ^t _{t-h} (t-s)x^T(s)ds \\ \\
@@ -535,7 +531,7 @@ Since the parameters of the power system experience some disturbance, this is ac
  \Phi _2 &= Sym\{\Pi _{10}^T\Pi _{11} + N\Pi _{9}+\Pi  _7^TY_1 +\Pi_8^TY_2\}  \\ \\
  \Phi _3 &= h(t)Y_1^T\widetilde{R}^{-1}Y_1+\widetilde{h}(t)Y_2^T\widetilde{R}^{-1}Y_2
  \end{align}
-
+ $\widetilde{R}=diag\{R \quad 3R \quad 5R\}$
 \section{Robust Stability}
 Theorem1: For a scalar $\lambda > 0$, if there exist real symmetric matrices $P (\in R^{4n*4n}) > 0$, $Q (\in R^{5n*5n}) > 0$,$R (\in R^{n*n}) > 0$ any real matrices $Y_1,Y_2,X_1,X_2,X_3$ and N with appropriate dimensions, the system is stable if the following LMIs and are satisfied for $0 \leqslant h(t) \leqslant h $
   \begin{align}
@@ -766,13 +762,19 @@ If the load increases at the 10 s, the following frequency deviation response is
 \end{figure}
 \section{conclusion}
 The time-delay robust stability of a power system with uncertain parameters with PID load frequency control was analyzed in this study. New LK functional derived from the Lyapunov theory was put to test by comparing the results with the existing method used to obtain stability margin. 
+\section{summary}
+Concepts learned
+\begin{enumerate}
+  \item Knowledge on Power Systems - Superficial understanding on power systems
+  \item Controls with Power - Concepts for LTI was applied for controls component(PID)
+  \item LK functional -We didn't finish digesting the paper on LK functional sent to us by Prof Sesan as we were really pressed for time
+
 \section{Discussion}
-\section{Summary}
-We have made an effort to understand the concepts of LK functional and Bessel's integral. But, due to time constraints and complexity of equation implementation of LMI tool was not possible. 
+We made an attempt to use the LMI toolbox, but due to time constraints and complexity of the equation,  the full verification of the above model was not possible.
 \appendices
 \section*{Acknowledgment}
 \section{bibliography}
-\begin{enumerate} 
+ \begin{enumerate} 
   \item X G Liu, W Wang, H B Zeng, et al. Robust stability analysis of the uncertain time-delay power system. Journal of Hunan University of Technology, 2018,  
   \item S Boyd, L Ghaoui, E Feron, et al. Linear matrix inequalities in system and control theory. SIAM, Philadelphia, 1994 
   \item Construction of Lyapunov-Krasovskii functional for time-varying delay systems by Yassine Ariba and Frederic Gouaisbaut
