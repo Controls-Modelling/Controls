@@ -25,15 +25,11 @@
 % author names 
 \author{ Authors: Eashwar Sathyamurthy  Akwasi A Obeng}
         
-% The report headers
 \markboth{ENPM667 Controls of Robotics Systems. Technical Report 9, November 2019}
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
 
-% make the title area
 \maketitle
 
-% As a general rule, do not put math, special symbols or citations
-% in the abstract or keywords.
 \begin{abstract}
   This technical report examines the robust stability of a power system, which is based on proportional-integral-derivative load
 frequency control and involves uncertain parameters and time delays. This report examines a power system model which  is transformed into a closed-loop system with feedback control. The purpose of this report is to verify new augmented Lyapunov-Krasovskii (LK)
@@ -41,16 +37,7 @@ functional to employ the new Bessel-Legendre inequality. The new Bessel-Legendre
 a maximum lower bound. This report also verifies and provides a detailed description of stability criterion of the power system obtained by employing the LK functional and Bessel-Legendre inequality. Finally,
 this report validates the proposed method by applying it to practical numerical examples.
 \end{abstract}
-
-\begin{IEEEkeywords}
-  Index Terms - To be modified later
-\end{IEEEkeywords}
-
 \section{Introduction}
-% Here we have the typical use of a "W" for an initial drop letter
-% and "RITE" in caps to complete the first word.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
 
 \IEEEPARstart{W}{ith} the growing population, the demand for efficient power systems have increased drastically. Efficient power systems have the characteristics of high stability margin and less time delays. These characteristics are attainable if the operating frequency of the power system fluctuate within a small range of equilibrium value and the load frequency control (LFC) can control these fluctuations. During the process of data transmission, there is always a possiblity of occurance if time delays. These time delays occur randomly which makes it impossible to predict.  Therefore, gaining insights on robust stability of power systems with time delays and uncertain parameters can help to overcome this problem. \\
 
@@ -137,15 +124,9 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
    Properties \\
     Legendre Polynomials are orthogonal
     \begin{align}
-      %ie int_-1^1 P_{k_1}P_{k_2} &= 0 %for k_1 neq k_2
     (2n-1)xP_(n-1)(x) = nP(x) + (n-1)P_(n-2)(s) n = 2, 3 ...
   \end{align}
 
-    
-
-%\begin{equation}
-  %(1-x^2)
-%\end{equation}
 \subsection{Bessle Legendre Inequalities}
  \begin{align}
    \int_{-h}^{0}x(u)Rx(u)du \geq \frac{1}{h}
@@ -538,9 +519,9 @@ Since the parameters of the power system experience some disturbance, this is ac
  \Pi _4 &= [e_{12}^T \quad e_3^T \quad e_{1}^T \quad e_{3}^T \quad 0]^T \\ \\
  \Pi _5 &= [e_{1}^T - e_3^T \quad e_{8}^T + e_{10}^T \quad he_{1}^T \quad he_3^T \quad \Pi _0^T]^T \\ \\
  \Pi _6 &= [0 \quad 0 \quad e_{13}^T \quad e_{12}^T \quad -e^T_3]^T \\ \\  
- \Pi _{7a} &= [e_1^T \quad \e_2^T \quad \e_4^T \quad \e_5^T]^T \\ \\
+ \Pi _{7a} &= [e_1^T \quad e_2^T \quad e_4^T \quad e_5^T]^T \\ \\
  \Pi _7 &= [\Pi\quad \Pi _{7a} ]\\ \\
- \Pi _{8a} &= [e_2^T \quad \e_3^T \quad \e_6^T \quad \e_7^T]^T \\ \\ 
+ \Pi _{8a} &= [e_2^T \quad e_3^T \quad e_6^T \quad e_7^T]^T \\ \\ 
  \Pi _8 &= [\Pi \quad \Pi _{8a} ] \\ \\
  \Pi _{9a} &= [e_8^T -h(t)e^T_4 \quad e^T_9 - h(t)e^T_5]^T \\ \\
  \Pi _{9b} &= [e_{10}^T -\widetilde{h}(t)e^T_6 \quad e^T_{11} - \widetilde{h}(t)e^T_7]^T \\ \\
@@ -556,9 +537,7 @@ Since the parameters of the power system experience some disturbance, this is ac
  \end{align}
 
 \section{Robust Stability}
-For a scalar $\lamda >0$ , if there exist real symmetric matrices $P (\epsilon R^{4n \times 4n}) >0$, $Q (\epsilon R^{5n\times5n}) > 0$, $R(\epsilon R^{n\times n})>0,$
-and any real matrices $Y_1, Y_2,X_1,X_2,X_3,$ and $N$ with appropriate dimensions, the system is stable if the following LMIs are satisifed for $0\leq h(t) \leq h$
-
+Theorem1: For a scalar $\lambda > 0$, if there exist real symmetric matrices $P (\in R^{4n*4n}) > 0$, $Q (\in R^{5n*5n}) > 0$,$R (\in R^{n*n}) > 0$ any real matrices $Y_1,Y_2,X_1,X_2,X_3$ and N with appropriate dimensions, the system is stable if the following LMIs and are satisfied for $0 \leqslant h(t) \leqslant h $
   \begin{align}
   \begin{bmatrix}
      \phi(0)&\theta _1^T&hY_2^T\\
@@ -636,16 +615,16 @@ From
 \end{equation}
 Combining formulas (17)-(23), we can easily obtain  
 \begin{equation}
-\diff{V(x_t)}{t}  \leqslant \xi ^T (t)\text{\={$\Phi$}}\xi(t)
+\diff{V(x_t)}{t}  \leqslant \xi ^T (t)\bar{\Phi}\xi(t)
 \end{equation}
 where
 \begin{equation}
-\text{\={$\Phi$}} = \Phi_0 + \theta^{T}_{1}F(t)\theta_2   +   \theta^{T}_{2}(t)F(t)\theta_1
+\bar{\Phi} = \Phi_0 + \theta^{T}_{1}F(t)\theta_2   +   \theta^{T}_{2}(t)F(t)\theta_1
 \end{equation}
 \\
 If
 \begin{equation}
-\text{\={$\Phi$}} = \Phi_0 + \theta^{T}_{1}F(t)\theta_2   +   \theta^{T}_{2}(t)F(t)\theta_1   < 0
+\bar{\Phi} = \Phi_0 + \theta^{T}_{1}F(t)\theta_2   +   \theta^{T}_{2}(t)F(t)\theta_1   < 0
 \end{equation}
  is true, and by employing Lemma 2 for a scalar $\lambda$ is greater than 0, we can obtain 
 \begin{equation}
@@ -663,31 +642,25 @@ Now, we can assume that the time-delay is constant, that is
 \end{equation}
 The system (80) is then transformed into the following system 
 \begin{equation}
- \diff{x}{t}=(A_0 + \Delta A_0)x(t) + (A_d + \Delta A_d)(x(t)-\text{\={h}})),
+ \diff{x}{t}=(A_0 + \Delta A_0)x(t) + (A_d + \Delta A_d)(x(t)-\bar{h})),
 \end{equation}
-where $\text{\={h}}$ represents a constant time-delay that satisfies
+where $\bar{h}$ represents a constant time-delay that satisfies
 \begin{equation}
-0  \leqslant \text{\={h}} \leqslant h
+0  \leqslant \bar{h} \leqslant h
 \end{equation}
 , and other parameters are the same as system (80). We choose the LK functional to be
 \begin{equation}
-\text{\={V(t)}} = \text{\={$\eta^T(t)$}}\text{\={P}} \text{\={$\eta(t)$}} + \int^{t}_{t-h}\text{\={$\theta^T(t,s)$}}\text{\={Q}}\text{\={$\theta(t,s)$}}ds 
+\bar{V}(t) = \bar{\eta}^T(t)\bar{P} \bar{\eta}(t) + \int^{t}_{t-h}\bar{\theta}^T(t,s)\bar{Q}\bar{\theta}(t,s)ds 
 \end{equation}
 \\
 \begin{equation}
-+ \int^{0}_{-h}\int^{t}_{t + \theta}\diff{x}{s}^T(s)\text{\={R}}\diff{x}{s}(s)dsd\theta
++ \int^{0}_{-h}\int^{t}_{t + \theta}\diff{x}{s}^T(s)\bar{R}\diff{x}{s}(s)dsd\theta
 \end{equation}
 where 
+$\bar{\eta}(t) = [\bar{e}^{T}_{1} \quad \chi_1 \quad  \chi_2]^T$
+ 
 \begin{equation}
-\text{\={$\eta(t)$}} = 
-\begin{bmatrix}
-\text{\={$e^{T}_{1}$}} \\
- \chi_1 \\
- \chi_2
-\end{bmatrix}
-\end{equation}
-\begin{equation}
-\text{\={$\theta(t,s)$}} = 
+\bar{\theta}(t,s) = 
 \begin{bmatrix}
 \diff{x}{s}^T(s) \\ \\
  \eta^{T}_{0}(t) \\ \\
@@ -695,7 +668,7 @@ where
 \end{bmatrix}
 \end{equation}
 \begin{equation}
-\text{\={$\xi(t)$}} = 
+\bar{\xi}(t) = 
 \begin{bmatrix}
 \eta^{T}_{0}(t) \\ 
  \frac{\chi_1}{h} \\ 
@@ -705,7 +678,7 @@ where
 \end{bmatrix}
 \end{equation}
 \begin{equation}
-\text{\={$e_i$}} = 
+\bar{e}_i = 
 \begin{bmatrix}
 0_n*(i-1)n & I_n & 0_n*(6-i)n  
 \end{bmatrix}
@@ -714,40 +687,41 @@ i=1,2,...,6
 On applying the proposed method, we can derive the following criterion for this functional: 
 \\
 Corollary 1:
-For a scalar $\lambda > 0$ , if there exist real symmetric matrices
-\begin{equation}
-\text{\={P}} (\text{$\in {R^{4n*4n}}$}) > 0, \quad  \text{\={Q}}(\text{$\in {R^{4n*4n}}$}) > 0, \quad \text{\={R}} (\text{$\in {R^{n*n}}$}) > 0,
-\end{equation}
-and any real matrices {\={Y}},{\={$X_1$}},{\={$X_2$}}, and {\={$X_3$}}
-with appropriate dimensions, the system (111) is stable if the following LMI (121) is satisfied $0\leqslant\text{\={h}}\leqslant h$
+For a scalar $\bar{\lambda} > 0$, if there exist real symmetric matrices
+$\bar{P} \in {R^{4n*4n}}) > 0, \quad  \bar{Q}(\text{$\in {R^{4n*4n}}$}) > 0, \quad \bar{R} (\in {R^{n*n}}) > 0$, and any real matrices $\bar{Y},\bar{X}_1,\bar{X}_2, and \bar{X}_3.$
+with appropriate dimensions, the system (111) is stable if the following LMI (121) is satisfied $0\leqslant\bar{h}\leqslant h$
 \begin{equation}
 \begin{bmatrix}
-\text{\={$\Phi$}} & \text{\={$\theta^{T}_{1}$}} & h\text{\={$Y^{T}_{1}$}} \\
+\bar{\Phi} & \bar{\theta}^{T}_{1} & h\bar{Y}^{T}_{1} \\
 * & -\lambda I   & 0 \\
-* & * & -h\text{\~{\={R}}}
+* & * & -h\bar{R}
 \end{bmatrix}
 < 0
 \end{equation}
 where 
 \begin{align}
-\text{\~{\={R}}} &= diag{\text{\={R}} \quad 3\text{\={R}} \quad 5\text{\={R}}} \quad \text{\={$\Phi$}} = \text{\={$\Phi_1$}} + \text{\={$\Phi_2$}} \\ \\
-\text{\={$\Phi_1$}}& = Sym[\text{\={$\Pi^{T}_{1}$}}\text{\={$P$}}\text{\={$\Pi_2$}} + \text{\={$\Pi^{T}_{5}$}}\text{\={$Q$}}\text{\={$\Pi_{6}$}} + \text{\={$\Pi^{T}_{7}$}}\text{\={$Y$}} + \text{\={$\Pi^{T}_{8}$}}\text{\={$\Pi_{9}$}}] \\ 
-\text{\={$\Phi_{2}$}}& = \text{\={$\Pi^{T}_{3}$}}\text{\={$Q$}}\text{\={$\Pi_{3}$}} - \text{\={$\Pi^{T}_{4}$}}\text{\={$Q$}}\text{\={$\Pi_{4}$}} + h\diff{x}{t}^T(t)\text{\={$R$}}\diff{x}{t}(t) + \text{\={$\lambda$}}\theta^{T}_{2}\theta_2 \\ 
-\text{\={$\Pi_{1}$}} &= [\text{\={$e^{T}_{1}$}} \quad h\text{\={$e^{T}_{3}$}} \quad h^2\text{\={$e^{T}_{4}$}}]^T \\ \\
-\text{\={$\Pi_{2}$}} &= [\text{\={$e^{T}_{6}$}} \quad \text{\={$e^{T}_{1}$}} \quad -\text{\={$e^{T}_{2}$}} \quad h\text{\={$e^{T}_{3}$}} \quad -h\text{\={$e^{T}_{2}$}} ]^T \\ \\ 
-\text{\={$\Pi_{3}$}} &= [\text{\={$e^{T}_{6}$}} \quad \text{\={$e^{T}_{1}$}} \quad \text{\={$e^{T}_{2}$}} \quad h\text{\={$e^{T}_{3}$}}]^T \\ \\
-\text{\={$\Pi_{4}$}} &= [\text{\={$e^{T}_{5}$}} \quad \text{\={$e^{T}_{1}$}} \quad \text{\={$e^{T}_{2}$}} \quad 0]^T \\ \\
-\text{\={$\Pi_{5}$}} &= [\text{\={$e^{T}_{1}$}} \quad -\text{\={$e^{T}_{2}$}} \quad h\text{\={$e^{T}_{1}$}} \quad h\text{\={$e^{T}_{2}$}} \quad h^2\text{\={$e^{T}_{4}$}}]^T \\ \\
-\text{\={$\Pi_{6}$}} &= [0 \quad \text{\={$e^{T}_{6}$}} \quad \text{\={$e^{T}_{5}$}} \quad -\text{\={$e^{T}_{2}$}}]^T \\ \\
-\text{\={$\Pi_{7a}$}} &= [\text{\={$e^{T}_{1}$}} \quad \text{\={$e^{T}_{2}$}} \quad \text{\={$e^{T}_{3}$}} \quad \text{\={$e^{T}_{4}$}}]^T \\ \\
-\text{\={$\Pi_{7}$}} &= \Pi\text{\={$\Pi_{7a}$}} \\ \\
-\text{\={$\Pi_{8}$}} &= [\text{\={$e^{T}_{6}$}}\text{\={$X_{1}$}} + \text{\={$e^{T}_{1}$}}\text{\={$X_{2}$}}]^T + \text{\={$e^{T}_{2}$}}\text{\={$X_{3}$}} \\ \\
-\text{\={$\Pi_{9}$}} &= [\text{\={$e^{T}_{1}$}}\text{\={$A^{T}_{0}$}} + \text{\={$e^{T}_{2}$}}\text{\={$A^{T}_{d}$}} + -\text{\={$e^{T}_{6}$}}]^T \\
+\bar{R}1 &= diag[\bar{R} \quad 3\bar{R} \quad 5\bar{R}] \quad \bar{\Phi} = \bar{\Phi}_1+ \bar{\Phi}_2 \\ \\
+\bar{\Phi}_1& = Sym[\bar{\Pi}^{T}_{1}\bar{P}\bar{\Pi}_2 + \bar{\Pi}^{T}_{5}\bar{Q}\bar{\Pi}_{6} + \bar{\Pi}^{T}_{7}\bar{Y} + \bar{\Pi}^{T}_{8}\bar{\Pi}_{9}] \\ \\
+\bar{\Phi}_{2}& = \bar{\Pi}^{T}_{3}\bar{Q}\bar{\Pi}_{3} - \bar{\Pi}^{T}_{4}\bar{Q}\bar{\Pi}_{4} + h\diff{x}{t}^T(t)\bar{R}\diff{x}{t}(t) + \bar{\lambda}\theta^{T}_{2}\theta_2 \\ 
+\bar{\Pi}_{1} &= [\bar{e}^{T}_{1} \quad h\bar{e}^{T}_{3} \quad h^2\bar{e}^{T}_{4}]^T \\ \\ 
+\bar{\Pi}_{2} &= [\bar{e}^{T}_{6} \quad \bar{e}^{T}_{1} \quad -\bar{e}^{T}_{2} \quad h\bar{e}^{T}_{3} \quad -h\bar{e}^{T}_{2} ]^T \\ \\
+\bar{\Pi}_{3} &= [\bar{e}^{T}_{6} \quad \bar{e}^{T}_{1} \quad \bar{e}^{T}_{2} \quad h\bar{e}^{T}_{3}]^T \\ \\ 
+\bar{\Pi}_{4} &= [\bar{e}^{T}_{5} \quad \bar{e}^{T}_{1} \quad \bar{e}^{T}_{2} \quad 0]^T \\ \\
+\bar{\Pi}_{5} &= [\bar{e}^{T}_{1} \quad -\bar{e}^{T}_{2} \quad h\bar{e}^{T}_{1} \quad h\bar{e}^{T}_{2} \quad h^2\bar{e}^{T}_{4}]^T \\ \\
+\bar{\Pi}_{6} &= [0 \quad \bar{e}^{T}_{6} \quad \bar{e}^{T}_{5} \quad -\bar{e}^{T}_{2}]^T \\ \\ 
+\bar{\Pi}_{7a} &= [\bar{e}^{T}_{1} \quad \bar{e}^{T}_{2} \quad \bar{e}^{T}_{3} \quad \bar{e}^{T}_{4}]^T \\ \\ 
+\bar{\Pi}_{7} &= \Pi\bar{\Pi}_{7a} \\ \\
+\bar{\Pi}_{8} &= [\bar{e}^{T}_{6}\bar{X}_{1} + \bar{e}^{T}_{1}\bar{X}_{2}]^T + \bar{e}^{T}_{2}\bar{X}_{3} \\ \\
+\bar{\Pi}_{9} &= [\bar{e}^{T}_{1}\bar{A}^{T}_{0} + \bar{e}^{T}_{2}\bar{A}^{T}_{d}  -\bar{e}^{T}_{6}]^T 
 \end{align}
 The remaining elements and the calculation process are the same as those of Theorem 1.
-
-\section{Results and Case analysis}
-To verify the superiority of the method in this study, the LMI toolbox in MATLAB is used to solve the time-delay stability margins of the power system based on PID load frequency control under the conditions of random time-delay and uncertain parameters. System parameters are listed in Table 1
+\section{Case analysis}
+\begin{enumerate}
+\item Analysed the given power system by deriving the state space equation and performed controllability analysis on the system.
+\item  Analysed the delay in the power systems and tried to increase the upper bound of time delay stability margin. 
+\item Studied the effect of introducing feedback in the form of PID controller in the output to eliminate area control error.
+\item  Derived the new LK functional for the power system using Lyapunov theory.
+\end{enumerate}
 \begin{figure}[h!]
 \includegraphics[width=\linewidth]{systemparameters.png}
   \caption{System Parameters}
@@ -791,110 +765,16 @@ If the load increases at the 10 s, the following frequency deviation response is
   \label{ Frequency deviation response of different time delays }
 \end{figure}
 \section{conclusion}
-Based on PID load frequency control, the time-delay robust stability of a power system with uncertain parameters was analyzed in this study. Through the construction of a new LK functional, a stability criterion was obtained using Lyapunov stability theory, and the time-delay stability margin of the system was derived using LMI. Through an analysis of the effects of different disturbances, different types of time delays, and different control parameters on the stability margin of the system, the effectiveness and superiority of the proposed method were demonstrated. 
-%Show plots of any data collected and describe with words what your plots are showing. Describe the relationship between variables and time. Remember to number all your figures.  This is the most critical part affect the technical achievement.\\
-%No picture, table, schematic, or graph should appear without a name (generally of the form Fig.1 o Table 1). %~\ref{fig:ecg} or Table~\ref{table:Exps}), 
-%None should appear without a reference to them by name in the main body of the writing.
-%All figures and tables must be discussed in the text, including what it is, significant observations, and analysis. \\
-%Capitalize “Table” and “Fig.” any time they are accompanied by specific table or figure numbers. Examples: “The measured data are plotted in Fig. 2. The figure shows a linear relationship in....”. “The table shows …” vs. “The data of Table 3…” \\
-
-%\begin{table}[!ht] %[H]
-%\centering
-%\label{table:Exps}
-%\begin{tabular}{ll}
-%Student &  Max Temperature \\ \hline
-%aabbbccc &  $35^{\circ}$   \\
-%eeeddd &   $54^{\circ}$ \\
-%eeeddd &   $54^{\circ}$ \\
-%\end{tabular}
-%\caption{Temperature measurements performed for session 1.}
-%\end{table}
-
-%you can use a table generator from here: https://www.tablesgenerator.com/#
-
-%Use your word processor to make “real tables” (i.e., boxed in, etc.). Center all tables and include a heading and caption with the appropriate table number below each table. For example, “Table 1: Temperature measurements performed for session 1.” 
-
-%Figures must be centered, and the figure number and caption is centered beneath the
-%figure. For example, “Figure~\ref{fig:ecg}”. 
-
-%\begin{figure}[H]%[!ht]
-%\begin {center}
-%\caption{Illustrations, graphs, and photographs may fit across both columns, if necessary. Your artwork must be in place in the article.}
-%\label{fig:ecg}
-%\end {center}
-%\end{figure}
-
-%Always spell out table or Table. Give abbreviation of Figure, i.e., Fig., when used in
-%the middle to end of sentence, but spell it out when used at the very start of the
-%sentence. \\
-
-
-%All graphs must be done with a computer (i.e., spreadsheet software such as
-%Microsoft Excel or even Matlab.). Do not include hand drawn graphs unless
-%specifically instructed to do so.  \\
-%Include a leading zero when a number’s magnitude is less than 1 (use 0.83 instead of
-%writing .83). \\
-%Use your word processor for Greek symbols for common engineering quantities as $\beta$, $\pi$, $\gamma$ ,$\Omega$ . 
-\section{summary}
-Concepts learned
-\begin{enumerate}
-  \item Knowledge on Power Systems - Superficial understanding on power systems
-  \item Controls with Power - Concepts for LTI was applied for controls component(PID)
-  \item LK functional -We didn't finish digesting the paper on LK functional sent to us by Prof Sesan as we were really pressed for time
-
+The time-delay robust stability of a power system with uncertain parameters with PID load frequency control was analyzed in this study. New LK functional derived from the Lyapunov theory was put to test by comparing the results with the existing method used to obtain stability margin. 
 \section{Discussion}
-We made an attempt to use the LMI toolbox, but due to time constraints and complexity of the equation,  the full verification of the above model was not possible.
-
-%Discuss any interesting result related to the materials used or to any claim from the introduction. Discuss your measurements using engineering terms (accuracy, precision, resolution, etc).  Give technical conclusions. Restate the main objectives and how or to what degree they were achieved. What principles, laws and/or theory
-%were validated by the experiment? Describe some applications of your results and comment any possible recommended future work.
-
-
-
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
-
-
+\section{Summary}
+We have made an effort to understand the concepts of LK functional and Bessel's integral. But, due to time constraints and complexity of equation implementation of LMI tool was not possible. 
 \appendices
-%\section{Hand calculations (or name your title for appendix subtitle)}
-%List any extra evidence such as photos of the session, that may help you support your claims.
-%You can include all hand calculations, extra graphs and plots, simulation results, etc. 
-
- %use section* for acknowledgment
 \section*{Acknowledgment}
-Prof Sesan Iwarere for pointing us in the right direction.
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-
-%use following command to generate the list of cited references
-
 \section{bibliography}
 \begin{enumerate} 
   \item X G Liu, W Wang, H B Zeng, et al. Robust stability analysis of the uncertain time-delay power system. Journal of Hunan University of Technology, 2018,  
   \item S Boyd, L Ghaoui, E Feron, et al. Linear matrix inequalities in system and control theory. SIAM, Philadelphia, 1994 
   \item Construction of Lyapunov-Krasovskii functional for time-varying delay systems by Yassine Ariba and Frederic Gouaisbaut
-\end{enumerate}
+ \end{enumerate}
 \end{document}
