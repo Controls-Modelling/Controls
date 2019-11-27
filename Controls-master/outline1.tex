@@ -118,7 +118,7 @@ a_{k-4} = \frac{(-1)^2(2k-4)!}{2(2^k)(k-2)!(k-4)!}
   
     Therefore
     \begin{equation}
-    P_k(x) = \sum_{m=0}^{k/2} 
+      P_k(x) = \sum_{m=0}^{k/2} a_{k-2m}x^{k-2m}
   \end{equation}
 
    Properties \\
@@ -437,14 +437,14 @@ Since the parameters of the power system experience some disturbance, this is ac
    \begin{bmatrix}
      \frac{-D}{M} &\frac{1}{M} &0 &0 \\
      0 &\frac{-\alpha _1}{T_T} &\frac{\alpha}{T_T} &0 \\
-     -\frac{\gamma}{T_GR} &0 -&\frac{\gamma _1}{T_G} &0 \\
+     -\frac{\gamma}{T_GR} &0 &-\frac{\gamma _1}{T_G} &0 \\
      \beta& 0 & 0 & 0
    \end{bmatrix} \\
    &A_d =
    \begin{bmatrix}
      0&0&0 &0 \\
      0 &0&0&0 \\
-     \frac{\gamma _1 \beta D K_D}{MT_G} - \frac{\gamma _1\beta K_p}{T_G}&0 -&\frac{\gamma _1\beta K_D}{MT_G} &-\frac{\gamma _1 K_1}{T_G} \\
+     \frac{\gamma _1 \beta D K_D}{MT_G} - \frac{\gamma _1\beta K_p}{T_G}&0  &-\frac{\gamma _1\beta K_D}{MT_G} &-\frac{\gamma _1 K_1}{T_G} \\
      0& 0 & 0 & 0
    \end{bmatrix} \\
    &E_1=
@@ -458,7 +458,7 @@ Since the parameters of the power system experience some disturbance, this is ac
    \begin{bmatrix}
      0&0&0 &0 \\
      0 &0&0&0 \\
-     \frac{\gamma _2 \beta D K_D}{MT_G} - \frac{\gamma _2\beta K_p}{T_G}&0 -&\frac{\gamma _2\beta K_D}{MT_G} &-\frac{\gamma _2 K_1}{T_G} \\
+     \frac{\gamma _2 \beta D K_D}{MT_G} - \frac{\gamma _2\beta K_p}{T_G}&0 &-\frac{\gamma _2\beta K_D}{MT_G} &-\frac{\gamma _2 K_1}{T_G} \\
      0& 0 & 0 & 0
    \end{bmatrix}
  \end{flalign}
@@ -768,7 +768,7 @@ Concepts learned
   \item Knowledge on Power Systems - Superficial understanding on power systems
   \item Controls with Power - Concepts for LTI was applied for controls component(PID)
   \item LK functional -We didn't finish digesting the paper on LK functional sent to us by Prof Sesan as we were really pressed for time
-
+\end{enumerate}
 \section{Discussion}
 We made an attempt to use the LMI toolbox, but due to time constraints and complexity of the equation,  the full verification of the above model was not possible.
 \appendices
@@ -776,8 +776,8 @@ We made an attempt to use the LMI toolbox, but due to time constraints and compl
 Thanks to Prof Sesan Iwarere for pointing us in the right direction.
 \section{bibliography}
  \begin{enumerate} 
-  \item X G Liu, W Wang, H B Zeng, et al. Robust stability analysis of the uncertain time-delay power system. Journal of Hunan University of Technology, 2018,  
-  \item S Boyd, L Ghaoui, E Feron, et al. Linear matrix inequalities in system and control theory. SIAM, Philadelphia, 1994 
-  \item Construction of Lyapunov-Krasovskii functional for time-varying delay systems by Yassine Ariba and Frederic Gouaisbaut
+    \item X G Liu, W Wang, H B Zeng, et al. Robust stability analysis of the uncertain time-delay power system. Journal of Hunan University of Technology, 2018,  
+    \item S Boyd, L Ghaoui, E Feron, et al. Linear matrix inequalities in system and control theory. SIAM, Philadelphia, 1994 
+    \item Construction of Lyapunov-Krasovskii functional for time-varying delay systems by Yassine Ariba and Frederic Gouaisbaut
  \end{enumerate}
 \end{document}
